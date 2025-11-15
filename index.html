@@ -3,38 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amit & Priyanka - Wedding Invitation</title>
+    <title>Pranay & Suhani - Wedding Invitation</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="aplogo.png">
-    <link rel="apple-touch-icon" href="aplogo.png">
+    <link rel="icon" type="image/png" href="assets/icons/aslogo.png">
+    <link rel="apple-touch-icon" href="assets/icons/aslogo.png">
     
-    <!-- Open Graph Meta Tags for Social Sharing -->
-    <meta property="og:site_name" content="Amit & Priyanka's Wedding" />
-    <meta property="og:title" content="Inviting you to Amit and Priyanka's Wedding" />
-    <meta property="og:description" content="Join us in celebrating our special day on November 29-30, 2025 at Gold Finch Hotel, Mumbai" />
-    <meta property="og:image" content="https://amitsehgal29.github.io/apwedding/aplogo.png" />
-    <meta property="og:image:secure_url" content="https://amitsehgal29.github.io/apwedding/aplogo.png" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Amit & Priyanka Wedding Invitation" />
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:site_name" content="Pranay & Suhani's Wedding" />
+    <meta property="og:title" content="Inviting you to Pranay and Suhani's Wedding" />
+    <meta property="og:description" content="Join us in celebrating our special day on December 10-11, 2025 at JK Farm, Kotdwar" />
+    <meta property="og:image" content="https://amitsehgal29.github.io/apwedding/assets/icons/aslogo.png" />
     <meta property="og:url" content="https://amitsehgal29.github.io/apwedding/" />
-    <meta property="og:type" content="website" />
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Inviting you to Amit and Priyanka's Wedding" />
-    <meta name="twitter:description" content="Join us in celebrating our special day on November 29-30, 2025 at Gold Finch Hotel, Mumbai" />
-    <meta name="twitter:image" content="https://amitsehgal29.github.io/apwedding/aplogo.png" />
-    
-    <!-- WhatsApp Specific -->
-    <meta property="og:image:width" content="300" />
-    <meta property="og:image:height" content="300" />
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amoresa&family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -43,753 +28,1037 @@
         }
 
         :root {
-            --cream: #FFF9F0;
-            --ivory: #FFFFF0;
-            --gold: #D4AF37;
-            --light-gold: #F5E6D3;
-            --soft-pink: #F0D4D8;
-            --rose: #C97B8E;
-            --charcoal: #3D3D3D;
-            --warm-white: #FDFBF7;
-        }
-
-        html {
-            scroll-behavior: smooth;
+            --primary: #C9302C;
+            --secondary: #D4A373;
+            --accent: #E8B44F;
+            --dark: #2A1810;
+            --light: #FAF3E0;
+            --gold: #FFD700;
+            --indian-red: #D32F2F;
+            --magenta: #E91E63;
+            --royal-gold: #FFB300;
+            --emerald: #00897B;
+            --bright-orange: #FF6F00;
+            --deep-pink: #C2185B;
         }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background: var(--cream);
-            color: var(--gold);
-            line-height: 1.6;
+            background: #0A0A0A;
+            color: white;
+            overflow-x: hidden;
+            cursor: none;
         }
 
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 400;
-        }
-
-        .decorative-text {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 400;
-        }
-
-        /* Glitter Sparkle Animation */
-        .glitter {
+        /* Custom Cursor */
+        .cursor {
             position: fixed;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--accent);
+            border-radius: 50%;
             pointer-events: none;
-            z-index: 5;
-            width: 4px;
-            height: 4px;
+            z-index: 10000;
+            transition: all 0.1s ease;
+            mix-blend-mode: difference;
         }
 
-        .glitter::before,
-        .glitter::after {
-            content: '';
-            position: absolute;
-            background: var(--gold);
-            animation: sparkle var(--sparkle-duration, 3s) ease-in-out infinite;
-            animation-delay: var(--sparkle-delay, 0s);
-            will-change: opacity;
+        .cursor-follower {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(232, 180, 79, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: all 0.15s ease;
+            mix-blend-mode: difference;
         }
 
-        .glitter::before {
-            width: 100%;
-            height: 1px;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .glitter::after {
-            width: 1px;
-            height: 100%;
-            left: 50%;
+        /* Canvas for Particles */
+        #particleCanvas {
+            position: fixed;
             top: 0;
-            transform: translateX(-50%);
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
         }
 
-        @keyframes sparkle {
-            0%, 100% {
-                opacity: 0;
-            }
-            50% {
-                opacity: 1;
-            }
-        }
-
-        /* Simplified animation for mobile performance */
-        @media (max-width: 768px) {
-            .glitter::before,
-            .glitter::after {
-                animation-duration: 4s;
-            }
-        }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Section Styling */
-        section {
+        /* Hero Section - Traditional Indian Welcome */
+        .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 3.75rem 1.25rem;
             position: relative;
+            background: linear-gradient(135deg, #FFF8F0 0%, #FFE4D6 30%, #FFDFC4 70%, #FFF8F0 100%);
+            padding: 2rem;
+            overflow: hidden;
         }
 
-        /* Welcome Section */
-        .welcome-section {
-            background: var(--cream);
-            min-height: auto;
-            padding: 1.875rem 1.25rem;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.875rem;
-            margin-bottom: 1.875rem;
-        }        .welcome-message {
-            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-            font-family: 'Cormorant Garamond', serif;
-            color: var(--rose);
-            margin-bottom: 0;
-            max-width: 700px;
-            line-height: 1.8;
-            font-weight: 400;
-            font-style: normal;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 30% 40%, rgba(255, 168, 87, 0.03), transparent 60%),
+                radial-gradient(circle at 70% 60%, rgba(218, 165, 32, 0.03), transparent 60%);
+            pointer-events: none;
         }
 
-        .couple-names {
-            font-size: clamp(3rem, 10vw, 6.5rem);
-            font-family: 'Amoresa', cursive;
-            color: var(--gold);
-            margin: 0;
-            line-height: 1.2;
-            font-weight: 400;
-            letter-spacing: 0.05em;
-        }
-
-        .ampersand {
-            font-family: 'Amoresa', cursive;
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            color: var(--rose);
-            display: block;
-            margin: 0;
-        }
-
-        .shehnai-container {
+        /* Top Decorative Border - Using top.png */
+        .mandala-top {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden;
+            background-image: url('assets/images/top.png');
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
             pointer-events: none;
-            z-index: 1;
-        }
-
-        .shehnai {
-            position: absolute;
-            width: 200px;
-            height: auto;
-            transition: transform 0.1s linear;
-            will-change: transform;
+            z-index: 7;
             opacity: 0;
-            animation: fadeInSVG 1.5s ease-in-out forwards;
+            transition: opacity 1.5s ease-in-out;
+            mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
         }
 
-        .shehnai.left {
-            top: 40%;
+        .mandala-top.loaded {
+            opacity: 0.6;
+        }
+
+
+        /* Main Welcome Card */
+        .hero-content {
+            text-align: center;
+            z-index: 15;
+            perspective: 1000px;
+            max-width: 1200px;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 4rem 3rem;
+            border-radius: 30px;
+            box-shadow:
+                0 30px 80px rgba(139, 69, 19, 0.3),
+                inset 0 0 0 2px rgba(218, 165, 32, 0.2);
+            position: relative;
+            border: 4px solid rgba(218, 165, 32, 0.5);
+        }
+
+        /* Shehnai Decorations - Diagonal Crossing Position */
+        .shehnai-decoration {
+            position: absolute;
+            width: 130px;
+            height: auto;
+            opacity: 0.92;
+            filter: drop-shadow(0 10px 30px rgba(255, 215, 0, 0.8));
+            z-index: 16;
+            animation: shehnai-play 5s ease-in-out infinite;
+        }
+
+        .shehnai-decoration.left {
+            left: 5%;
+            top: 35%;
+            transform: rotate(-35deg);
+            transform-origin: center;
+        }
+
+        .shehnai-decoration.right {
+            right: 5%;
+            top: 35%;
+            transform: rotate(35deg) scaleX(-1);
+            transform-origin: center;
+        }
+
+        @keyframes shehnai-play {
+            0%, 100% {
+                transform: rotate(-35deg) scale(1);
+                filter: drop-shadow(0 10px 30px rgba(255, 215, 0, 0.8));
+            }
+            25% {
+                transform: rotate(-32deg) scale(1.04);
+                filter: drop-shadow(0 15px 40px rgba(255, 215, 0, 1));
+            }
+            50% {
+                transform: rotate(-38deg) scale(1.06);
+                filter: drop-shadow(0 20px 50px rgba(255, 215, 0, 1.2))
+                        drop-shadow(0 0 70px rgba(255, 140, 0, 0.8));
+            }
+            75% {
+                transform: rotate(-32deg) scale(1.04);
+                filter: drop-shadow(0 15px 40px rgba(255, 215, 0, 1));
+            }
+        }
+
+        .shehnai-decoration.right {
+            animation-name: shehnai-play-right;
+        }
+
+        @keyframes shehnai-play-right {
+            0%, 100% {
+                transform: rotate(35deg) scaleX(-1) scale(1);
+                filter: drop-shadow(0 10px 30px rgba(255, 215, 0, 0.8));
+            }
+            25% {
+                transform: rotate(32deg) scaleX(-1) scale(1.04);
+                filter: drop-shadow(0 15px 40px rgba(255, 215, 0, 1));
+            }
+            50% {
+                transform: rotate(38deg) scaleX(-1) scale(1.06);
+                filter: drop-shadow(0 20px 50px rgba(255, 215, 0, 1.2))
+                        drop-shadow(0 0 70px rgba(255, 140, 0, 0.8));
+            }
+            75% {
+                transform: rotate(32deg) scaleX(-1) scale(1.04);
+                filter: drop-shadow(0 15px 40px rgba(255, 215, 0, 1));
+            }
+        }
+
+        /* Sound Waves from Shehnai */
+        .shehnai-decoration::before {
+            content: '';
+            position: absolute;
+            top: 25%;
+            width: 100px;
+            height: 100px;
+            border: 4px solid rgba(255, 215, 0, 0.6);
+            border-radius: 50%;
+            animation: sound-pulse 2.5s ease-out infinite;
+        }
+
+        .shehnai-decoration.left::before {
+            right: -50px;
+        }
+
+        .shehnai-decoration.right::before {
+            left: -50px;
+        }
+
+        @keyframes sound-pulse {
+            0% {
+                transform: scale(0.3);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(3);
+                opacity: 0;
+            }
+        }
+
+        /* Musical Notes Floating */
+        .shehnai-decoration::after {
+            content: '♪♫♪';
+            position: absolute;
+            font-size: 2.5rem;
+            color: rgba(255, 215, 0, 0.9);
+            animation: musical-notes 4s ease-in-out infinite;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+        }
+
+        .shehnai-decoration.left::after {
+            right: -40px;
+            top: 15%;
+        }
+
+        .shehnai-decoration.right::after {
+            left: -40px;
+            top: 20%;
+            animation-delay: 2s;
+        }
+
+        @keyframes musical-notes {
+            0%, 100% {
+                opacity: 0;
+                transform: translateY(0) rotate(-10deg) scale(0.8);
+            }
+            20% {
+                opacity: 1;
+            }
+            80% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-120px) rotate(30deg) scale(1.2);
+            }
+        }
+
+        /* Flower Shower */
+        .flower-shower {
+            position: absolute;
+            top: 0;
             left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 60;
+            overflow: hidden;
         }
 
-        .shehnai.right {
-            top: 40%;
-            right: 0;
-            transform: scaleX(-1);
+        .petal-fall {
+            position: absolute;
+            font-size: 3rem;
+            opacity: 0;
+            animation: petal-falling 10s linear infinite;
         }
 
-                .divider {
+        @keyframes petal-falling {
+            0% {
+                top: -5%;
+                opacity: 0;
+                transform: rotate(0deg) translateX(0);
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                top: 105%;
+                opacity: 0;
+                transform: rotate(720deg) translateX(150px);
+            }
+        }
 
-                    width: 12.5rem;
+        /* Varied animations for each flower */
+        .petal-fall:nth-child(1) { left: 5%; animation-delay: 0s; animation-duration: 9s; }
+        .petal-fall:nth-child(2) { left: 15%; animation-delay: 2s; animation-duration: 10s; }
+        .petal-fall:nth-child(3) { left: 30%; animation-delay: 1s; animation-duration: 11s; }
+        .petal-fall:nth-child(4) { left: 45%; animation-delay: 3s; animation-duration: 9.5s; }
+        .petal-fall:nth-child(5) { left: 60%; animation-delay: 0.5s; animation-duration: 10.5s; }
+        .petal-fall:nth-child(6) { left: 75%; animation-delay: 2.5s; animation-duration: 9s; }
+        .petal-fall:nth-child(7) { left: 90%; animation-delay: 1.5s; animation-duration: 10s; }
+        .petal-fall:nth-child(8) { left: 20%; animation-delay: 3.5s; animation-duration: 11s; }
+        .petal-fall:nth-child(9) { left: 50%; animation-delay: 0.8s; animation-duration: 9.5s; }
+        .petal-fall:nth-child(10) { left: 80%; animation-delay: 2.8s; animation-duration: 10.5s; }
+        .petal-fall:nth-child(11) { left: 10%; animation-delay: 1.2s; animation-duration: 10s; }
+        .petal-fall:nth-child(12) { left: 65%; animation-delay: 3.2s; animation-duration: 9.5s; }
 
-                    height: 0.125rem;
+        /* Ganesh Section */
+        .ganesh-blessing {
+            margin-bottom: 2rem;
+        }
 
-                    background: var(--gold);
+        .ganesh-image {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1.5rem;
+            animation: gentle-pulse 3s ease-in-out infinite;
+        }
 
-                    margin: 1.875rem auto;
+        @keyframes gentle-pulse {
+            0%, 100% {
+                transform: scale(1);
+                filter: drop-shadow(0 2px 8px rgba(218, 165, 32, 0.3));
+            }
+            50% {
+                transform: scale(1.03);
+                filter: drop-shadow(0 4px 12px rgba(218, 165, 32, 0.4));
+            }
+        }
 
-                    opacity: 0.6;
-
-                }
-
-        
-
-                /* Ganesh Section */
-
-                section.ganesh-section {
-                    position: relative;
-                    background: var(--ivory);
-                    min-height: auto;
-                    padding: 3.75rem 0;
-                    text-align: center;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 1.875rem;
-                    margin-bottom: 0;
-                }
-
-                .top-svg-container {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100vw;
-                    height: 100%;
-                    background-image: url(top.png);
-                    background-size: cover;
-                    background-position: center center;
-                    background-repeat: no-repeat;
-                    z-index: 0;
-                    pointer-events: none;
-                    mask-image: linear-gradient(to top, transparent, black 20%, black 90%, transparent);
-                    mask-composite: intersect;
-                    -webkit-mask-composite: source-in;
-                    opacity: 0;
-                    transition: opacity 1.5s ease-in-out;
-                }
-
-                .top-svg-container.loaded {
-                    opacity: 1;
-                }
-
-                .top-svg-container.instant {
-                    opacity: 1;
-                    transition: none;
-                }
-
-                @keyframes fadeInSVG {
-                    to {
-                        opacity: 1;
-                    }
-                }
-
-        
-
-                .ganesh-mantra {
-
-                    font-size: clamp(1rem, 4vw, 1.5rem);
-
-                    font-family: 'Cormorant Garamond', serif;
-
-                    color: var(--rose);
-
-                    margin-bottom: 0;
-
-                    letter-spacing: 0.1em;
-
-                    font-weight: 400;
-
-                    text-align: center;
-                    transform: translateY(-10px);
-
-                }
-
-        
-
-                .ganesh-icon {
-
-                    width: 7.375rem;
-
-                    height: 7.375rem;
-
-                    margin: 0 auto;
-
-                    display: block;
-
-                    background: transparent;
-
-                }
-
-        .ganesh-icon img {
+        .ganesh-image img {
             width: 100%;
             height: 100%;
             object-fit: contain;
-            background: transparent;
-            mix-blend-mode: multiply;
-            opacity: 0;
+            opacity: 0.8;
         }
 
-        .ganesh-icon img.loaded {
-            animation: fadeInImage 1.2s ease-out forwards;
+        .om-mantra {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.3rem, 3vw, 1rem);
+            color: #C97B84;
+            font-weight: 600;
+            text-shadow: none;
+            word-spacing: 0.4em;
         }
 
-        @keyframes fadeInImage {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+        .om-container {
+            display: none;
         }
 
-        /* Formal Invitation Section */
-        .invitation-section {
-            background: var(--ivory);
-            text-align: center;
-            margin-bottom: 30px;
+        .hero-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(3.5rem, 8vw, 6rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #D2691E 0%, #DAA520 50%, #B8860B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 2rem 0;
+            letter-spacing: 0.05em;
+            line-height: 1.2;
         }
 
-        .invitation-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 1.875rem;
-            background: var(--warm-white);
-            border-radius: 1.25rem;
-            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.15);
-            border: 2px solid var(--light-gold);
+        .hero-ampersand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            color: #C97B84;
+            display: block;
+            margin: 1.5rem 0;
+            font-style: italic;
+        }
+
+        .hero-date {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: #8B4513;
+            margin-top: 2rem;
+            letter-spacing: 0.15em;
+            font-weight: 600;
+        }
+
+        .ornamental-divider {
+            width: 150px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #DAA520, transparent);
+            margin: 2rem auto;
             position: relative;
-            z-index: 10;
         }
 
-        .invitation-title {
-            font-size: clamp(1.8rem, 4vw, 2.5rem);
-            color: var(--gold);
-            margin-bottom: 1.875rem;
-            font-family: 'Playfair Display', serif;
-            font-weight: 400;
-        }
-
-        .invitation-text {
-            font-size: 1.3rem;
-            font-family: 'Cormorant Garamond', serif;
-            color: var(--gold);
-            line-height: 2;
-            margin: 1.875rem 0;
-            font-weight: 400;
-            text-align: center;
-        }
-
-        .wedding-date {
-            font-size: 2rem;
-            font-weight: 500;
-            color: var(--rose);
-            margin: 1.875rem 0;
-            font-family: 'Playfair Display', serif;
-            text-align: center;
-            letter-spacing: 0.1em;
-        }
-
-        .venue-name {
-            font-size: 1.5rem;
-            color: var(--gold);
-            margin-top: 1.875rem;
-            font-family: 'Cormorant Garamond', serif;
-            text-align: center;
-            font-weight: 500;
-        }
-
-        /* Chandelier decorations */
-        .chandelier-container {
+        .ornamental-divider::before,
+        .ornamental-divider::after {
+            content: '✦';
             position: absolute;
-            top: 0;
+            color: #DAA520;
+            font-size: 1.2rem;
+            top: -10px;
+        }
+
+        .ornamental-divider::before {
+            left: -20px;
+        }
+
+        .ornamental-divider::after {
+            right: -20px;
+        }
+
+        /* Bottom Mandala Border */
+        .mandala-bottom {
+            position: absolute;
+            bottom: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: 150px;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 150"><path d="M 0,150 L 0,90 C 150,90 150,30 300,30 C 450,30 450,90 600,90 C 750,90 750,30 900,30 C 1050,30 1050,90 1200,90 L 1200,150 Z" fill="%23D2691E" opacity="0.15"/></svg>');
+            background-size: cover;
+            background-position: center bottom;
             pointer-events: none;
-            z-index: 0;
-            overflow: visible;
+            z-index: 5;
         }
 
-        .chandelier {
+        .scroll-indicator {
             position: absolute;
-            top: -60px;
-            bottom: 32%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transform-origin: top center;
-            opacity: 0.4;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            z-index: 20;
         }
 
-        /* String with fade at top */
-        .chandelier::before {
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        .scroll-indicator span {
+            display: block;
+            width: 30px;
+            height: 50px;
+            border: 2px solid #D2691E;
+            border-radius: 25px;
+            position: relative;
+        }
+
+        .scroll-indicator span::before {
             content: '';
-            width: 2.5px;
-            background: linear-gradient(to bottom, 
-                transparent 0%, 
-                rgba(212, 175, 55, 0.02) 5%, 
-                rgba(212, 175, 55, 0.05) 10%, 
-                rgba(212, 175, 55, 0.08) 15%,
-                rgba(212, 175, 55, 0.12) 20%, 
-                rgba(212, 175, 55, 0.16) 25%,
-                rgba(212, 175, 55, 0.20) 30%,
-                rgba(212, 175, 55, 0.24) 40%,
-                rgba(212, 175, 55, 0.28) 100%);
-            display: block;
-            flex: 1;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 6px;
+            background: #D2691E;
+            border-radius: 50%;
+            animation: scroll-down 2s infinite;
         }
 
-        .chandelier img {
-            display: block;
-            width: 180px;
-            height: auto;
-            flex-shrink: 0;
-            filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.3))
-                    drop-shadow(0 0 20px rgba(255, 223, 100, 0.3))
-                    drop-shadow(0 0 40px rgba(255, 223, 100, 0.2));
-            animation: chandelier-glow 4s ease-in-out infinite alternate;
+        @keyframes scroll-down {
+            0% { transform: translateX(-50%) translateY(0); opacity: 1; }
+            100% { transform: translateX(-50%) translateY(20px); opacity: 0; }
         }
 
-        @keyframes chandelier-glow {
-            0% {
-                filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.3))
-                        drop-shadow(0 0 20px rgba(255, 223, 100, 0.25))
-                        drop-shadow(0 0 40px rgba(255, 223, 100, 0.15));
-            }
-            100% {
-                filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.3))
-                        drop-shadow(0 0 20px rgba(255, 223, 100, 0.35))
-                        drop-shadow(0 0 40px rgba(255, 223, 100, 0.25));
-            }
+        /* Invitation Section */
+        .invitation-section {
+            min-height: 100vh;
+            padding: 6rem 2rem;
+            background: linear-gradient(180deg, #1A0F0F 0%, #2A1810 100%);
+            position: relative;
         }
 
-        /* Left chandelier - shorter */
-        .chandelier.left {
-            left: 3%;
-            animation: chandelier-sway-left 8s ease-in-out infinite;
+        .glass-card {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(250, 243, 224, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 30px;
+            padding: 5rem 4rem;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.4),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+            transform-style: preserve-3d;
+            transition: transform 0.6s ease;
         }
 
-        /* Right chandelier - longer */
-        .chandelier.right {
-            right: 3%;
-            left: auto;
-            animation: chandelier-sway-right 10s ease-in-out infinite;
+        .glass-card:hover {
+            transform: rotateY(2deg) rotateX(-2deg);
         }
 
-        /* Subtle pendulum animations */
-        @keyframes chandelier-sway-left {
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 3rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+        }
+
+        .couple-info {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .name-large {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            color: var(--accent);
+            margin: 2rem 0;
+            font-weight: 700;
+            animation: text-glow 3s ease-in-out infinite;
+        }
+
+        @keyframes text-glow {
             0%, 100% {
-                transform: rotate(-2deg);
+                text-shadow: 0 0 20px rgba(232, 180, 79, 0.5);
             }
             50% {
-                transform: rotate(2deg);
+                text-shadow: 0 0 40px rgba(232, 180, 79, 0.8), 0 0 60px rgba(232, 180, 79, 0.6);
             }
         }
 
-        @keyframes chandelier-sway-right {
-            0%, 100% {
-                transform: rotate(2deg);
-            }
-            50% {
-                transform: rotate(-2deg);
-            }
+        .family-text {
+            font-size: 1.2rem;
+            color: rgba(250, 243, 224, 0.9);
+            line-height: 2;
+            margin: 1rem 0;
+        }
+
+        .divider-line {
+            width: 200px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 2rem auto;
         }
 
         /* Events Section */
         .events-section {
-            background: var(--cream);
-            flex-direction: column;
-            min-height: auto;
-            padding: 3.75rem 1.25rem 1.875rem 1.25rem;
-            margin-bottom: 0;
+            min-height: 100vh;
+            padding: 6rem 2rem;
+            background: 
+                linear-gradient(180deg, #2A1810 0%, #1A0F0F 50%, #0A0A0A 100%);
+            position: relative;
         }
 
-        .section-title {
-            font-size: clamp(2rem, 5vw, 3rem);
-            color: var(--gold);
-            text-align: center;
-            margin-bottom: 2.5rem;
-            font-family: 'Playfair Display', serif;
-            font-weight: 400;
-        }
-        
-        /* Extra spacing for Helpful Information section title */
-        .links-section .section-title {
-            margin-bottom: 7.5rem;
-        }
-
-        .events-container {
+        .events-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 1.875rem;
-            max-width: 1000px;
-            width: 100%;
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 4rem auto 0;
         }
 
-        .event-card {
-            background: var(--warm-white);
-            padding: 1.875rem;
-            border-radius: 1.25rem;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
-            border: 2px solid var(--light-gold);
+        .event-card-3d {
+            background: rgba(250, 243, 224, 0.03);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(232, 180, 79, 0.3);
+            border-radius: 20px;
+            padding: 3rem 2rem;
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
-            z-index: 10;
+            transform-style: preserve-3d;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+            cursor: pointer;
         }
 
-        .event-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.25);
+        .event-card-3d::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(201, 48, 44, 0.1), rgba(232, 180, 79, 0.1));
+            opacity: 0;
+            border-radius: 20px;
+            transition: opacity 0.5s ease;
+        }
+
+        .event-card-3d:hover {
+            transform: translateY(-15px) rotateX(5deg) rotateY(5deg) scale(1.02);
+            border-color: var(--accent);
+            box-shadow: 
+                0 25px 50px rgba(201, 48, 44, 0.4),
+                0 0 100px rgba(232, 180, 79, 0.2);
+        }
+
+        .event-card-3d:hover::before {
+            opacity: 1;
+        }
+
+        .event-icon-animated {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: rotate-3d 10s linear infinite;
+            transform-style: preserve-3d;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .event-icon-animated img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 6px 20px rgba(232, 180, 79, 0.8));
+            background: transparent;
+        }
+        
+        /* Remove white/transparent background from PNG images */
+        .event-card-3d {
+            isolation: isolate;
+        }
+
+        @keyframes rotate-3d {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
         }
 
         .event-name {
-            font-size: clamp(2rem, 5vw, 2.5rem);
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .event-info-text {
+            font-size: 1.1rem;
+            color: rgba(250, 243, 224, 0.8);
+            margin: 0.8rem 0;
+            line-height: 1.8;
+        }
+
+        .event-info-text strong {
             color: var(--gold);
-            margin-bottom: 1.875rem;
-            font-family: 'Playfair Display', serif;
-            font-weight: 400;
         }
 
-        .event-details {
-            font-size: 1.2rem;
-            margin: 1.875rem 0;
-            color: var(--gold);
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 400;
-            text-align: center;
-        }
-
-        .event-details strong {
-            color: var(--rose);
-            display: block;
-            margin-bottom: 0.5rem;
-            font-size: 1.3rem;
-            text-align: center;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-        }
-
-        .dress-code {
-            margin-top: 1.875rem;
-            padding: 1.25rem;
-            background: var(--light-gold);
-            border-radius: 0.9375rem;
-            font-style: italic;
-            color: var(--rose);
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2rem;
-            border: 1px solid var(--gold);
-            text-align: center;
-        }
-
-        /* Useful Links Section */
-        .links-section {
-            background: var(--ivory);
-            min-height: auto;
-            padding: 3.75rem 1.25rem 1.875rem 1.25rem;
-        }
-
-        .links-container {
-            max-width: 900px;
-            width: 100%;
-        }
-
-        .link-card {
-            background: var(--warm-white);
-            padding: 1.875rem 1.875rem 3.125rem 1.875rem;
-            border-radius: 1.25rem;
-            margin-bottom: 5rem;
-            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.12);
-            border: 2px solid var(--light-gold);
+        .event-info-text a {
+            color: var(--accent);
+            text-decoration: none;
             position: relative;
-            z-index: 10;
-            overflow: visible;
-            min-height: 25rem;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        .event-info-text a:hover {
+            color: var(--gold);
+            border-bottom: 2px solid var(--gold);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .event-info-text a::after {
+            content: ' →';
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .event-info-text a:hover::after {
+            opacity: 1;
+        }
+
+        /* Direction button in event cards */
+        .event-card-3d .btn-modern {
+            margin-top: 1.5rem;
+            padding: 0.9rem 2rem;
+            font-size: 1rem;
+            background: linear-gradient(135deg, rgba(232, 180, 79, 0.2), rgba(255, 215, 0, 0.2));
+            border: 2px solid var(--accent);
+            color: var(--gold);
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 2;
+        }
+
+        .event-card-3d .btn-modern:hover {
+            background: linear-gradient(135deg, var(--accent), var(--gold));
+            color: #0A0A0A;
+            transform: scale(1.08) translateY(-2px);
+            box-shadow: 0 12px 35px rgba(232, 180, 79, 0.6);
+        }
+
+        /* Interactive Cards Section - Enhanced */
+        .cards-section {
+            padding: 8rem 2rem;
+            background: #0A0A0A;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cards-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 30% 50%, rgba(232, 180, 79, 0.03), transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(201, 48, 44, 0.03), transparent 50%);
+            animation: ambient-glow 12s ease-in-out infinite;
+        }
+
+        @keyframes ambient-glow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 3.5rem;
+            max-width: 1000px;
+            margin: 5rem auto 0;
+        }
+
+        .interactive-card {
+            background: rgba(15, 15, 15, 0.8);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(232, 180, 79, 0.25);
+            border-radius: 25px;
+            padding: 4rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+            cursor: pointer;
+            min-height: 320px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
 
-        .link-card h3 {
+        .interactive-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                from 0deg,
+                transparent,
+                rgba(232, 180, 79, 0.08),
+                transparent 60deg
+            );
+            animation: rotate-border 8s linear infinite;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .interactive-card:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes rotate-border {
+            to { transform: rotate(360deg); }
+        }
+
+        .interactive-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 25px;
+            padding: 2px;
+            background: linear-gradient(135deg, rgba(232, 180, 79, 0.3), rgba(255, 215, 0, 0.2));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .interactive-card:hover::after {
+            opacity: 1;
+        }
+
+        .interactive-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: var(--accent);
+            box-shadow:
+                0 25px 60px rgba(232, 180, 79, 0.35),
+                inset 0 0 50px rgba(232, 180, 79, 0.05);
+        }
+
+        .interactive-card h3 {
+            font-family: 'Cinzel', serif;
             font-size: 2rem;
-            color: var(--gold);
-            margin-bottom: 1.875rem;
-            margin-top: 14rem;
-            font-family: 'Playfair Display', serif;
-            text-align: center;
-            font-weight: 400;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            z-index: 1;
             position: relative;
-            z-index: 5;
         }
 
-        .link-card p {
-            margin-bottom: 1.875rem;
-            color: var(--gold);
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2rem;
-            text-align: center;
+        .interactive-card p {
+            color: rgba(250, 243, 224, 0.75);
+            margin-bottom: 2.5rem;
+            z-index: 1;
             position: relative;
-            z-index: 5;
-        }
-        
-        /* Only apply top margin to photo upload section */
-        .link-card:has(.polaroid-container) h3 {
-            margin-top: 14rem;
-        }
-        
-        /* Other sections keep normal margin */
-        .link-card:not(:has(.polaroid-container)) h3 {
-            margin-top: 0;
+            font-size: 1.05rem;
+            line-height: 1.7;
         }
 
-        /* Reduce padding for form card to give more space to inputs */
-        .link-card:has(.message-form) {
-            padding: 1.875rem 0.25rem 3.125rem 0.25rem !important;
-        }
-
-        .btn {
+        .btn-modern {
             display: inline-block;
-            padding: 0.9375rem 2.5rem;
-            background: transparent;
-            color: var(--gold);
+            padding: 1.1rem 3rem;
+            background: linear-gradient(135deg, #C97B84 0%, #D4A373 100%);
+            color: white;
             text-decoration: none;
-            border-radius: 3.125rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            font-size: clamp(0.8rem, 2vw, 1.1rem);
-            font-family: 'Montserrat', sans-serif;
-            border: 2px solid var(--gold);
-            margin: 0 auto;
-            letter-spacing: 0.05em;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
             position: relative;
-            z-index: 5;
+            overflow: hidden;
+            z-index: 2;
+            border: 2px solid rgba(232, 180, 79, 0.5);
+            box-shadow: 0 6px 25px rgba(201, 123, 132, 0.3);
+        }
+
+        .btn-modern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .btn-modern:hover::before {
+            left: 100%;
+        }
+
+        .btn-modern:hover {
+            transform: scale(1.08) translateY(-2px);
+            box-shadow: 0 12px 45px rgba(201, 123, 132, 0.5);
+            background: linear-gradient(135deg, #D4A373 0%, #C97B84 100%);
+        }
+
+        /* Gallery - Our Story Section */
+        .gallery-section {
+            padding: 8rem 2rem;
+            background: #0A0A0A;
+            position: relative;
             overflow: hidden;
         }
 
-        .btn::before {
+        .gallery-section::before {
             content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: var(--gold);
-            transition: width 0.4s ease, height 0.4s ease, top 0.4s ease, left 0.4s ease;
-            transform: translate(-50%, -50%);
-            z-index: -1;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(232, 180, 79, 0.05), transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(201, 48, 44, 0.05), transparent 40%);
+            animation: ambient-light 15s ease-in-out infinite;
         }
 
-        .btn:hover::before {
-            width: 300px;
-            height: 300px;
+        @keyframes ambient-light {
+            0%, 100% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
         }
 
-        .btn:hover {
-            color: white;
-            border-color: var(--gold);
-            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+        .story-container {
+            max-width: 1600px;
+            margin: 0 auto;
         }
 
-        .btn:active {
-            transform: scale(0.95);
-            box-shadow: 0 2px 10px rgba(212, 175, 55, 0.2);
-            transition: all 0.1s ease;
+        .polaroid-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            margin: 5rem auto 0;
+            padding: 2rem;
         }
 
-        .link-card {
-            text-align: center;
-        }
-
-        /* Message Form */
-        .message-form {
-            background: transparent;
-            padding: 1.875rem 0rem !important;
-            border-radius: 0.9375rem;
-            box-shadow: none;
-            text-align: center;
+        .polaroid-card {
+            background: linear-gradient(145deg, #E8E8E8, #FFFFFF);
+            padding: 1.2rem;
+            border-radius: 8px;
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            transform-style: preserve-3d;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+            cursor: pointer;
             position: relative;
-            z-index: 5;
+            animation: float-polaroid var(--float-duration, 6s) ease-in-out infinite;
         }
 
-        .form-group {
-            margin-bottom: 1.875rem;
-            text-align: center;
-            position: relative;
-            z-index: 5;
+        .polaroid-card:nth-child(1) { --float-duration: 6s; animation-delay: 0s; }
+        .polaroid-card:nth-child(2) { --float-duration: 7s; animation-delay: 0.5s; }
+        .polaroid-card:nth-child(3) { --float-duration: 6.5s; animation-delay: 1s; }
+        .polaroid-card:nth-child(4) { --float-duration: 7.5s; animation-delay: 1.5s; }
+
+        @keyframes float-polaroid {
+            0%, 100% {
+                transform: translateY(0) rotate(var(--rotation, 0deg));
+            }
+            50% {
+                transform: translateY(-15px) rotate(var(--rotation, 0deg));
+            }
         }
 
-        .form-group label {
+        .polaroid-card:nth-child(1) { --rotation: -3deg; }
+        .polaroid-card:nth-child(2) { --rotation: 2deg; }
+        .polaroid-card:nth-child(3) { --rotation: -2deg; }
+        .polaroid-card:nth-child(4) { --rotation: 3deg; }
+
+        .polaroid-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                from 0deg,
+                transparent 0deg,
+                rgba(255, 215, 0, 0.1) 60deg,
+                transparent 120deg
+            );
+            animation: rotate-shine 8s linear infinite;
+            opacity: 0;
+            transition: opacity 0.6s;
+        }
+
+        .polaroid-card:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes rotate-shine {
+            to { transform: rotate(360deg); }
+        }
+
+        .polaroid-card:hover {
+            transform: translateY(-20px) rotate(0deg) scale(1.05);
+            box-shadow:
+                0 30px 90px rgba(0, 0, 0, 0.8),
+                0 0 60px rgba(232, 180, 79, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            z-index: 10;
+        }
+
+        .polaroid-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
             display: block;
-            margin-bottom: 0.625rem;
-            color: var(--rose);
-            font-weight: 500;
-            font-family: 'Montserrat', sans-serif;
+            position: relative;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .polaroid-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+            filter: grayscale(20%) contrast(1.1);
+        }
+
+        .polaroid-card:hover .polaroid-image img {
+            transform: scale(1.15) rotate(2deg);
+            filter: grayscale(0%) contrast(1.2) brightness(1.1);
+        }
+
+        .polaroid-caption {
+            padding: 1.5rem 1rem 0.5rem;
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
             font-size: 1.1rem;
-            text-align: center;
-            letter-spacing: 0.05em;
+            color: #333;
+            font-weight: 600;
+            font-style: italic;
+            min-height: 60px;
         }
 
-        .form-group input,
-        .form-group textarea {
-            width: 90% !important;
-            max-width: 800px !important;
-            min-width: 300px !important;
-            display: block !important;
-            margin: 0 auto !important;
-            padding: 0.9375rem;
-            border: 1px solid var(--light-gold);
-            border-radius: 0.625rem;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-            background: white;
-            text-align: center;
-            box-sizing: border-box !important;
+        /* Horizontal Scroll Gallery Alternative */
+        .scroll-gallery {
+            display: none; /* Will be shown on smaller screens */
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding: 2rem 0;
+            gap: 2rem;
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--gold);
+        .scroll-gallery::-webkit-scrollbar {
+            height: 8px;
         }
 
-        .form-group textarea {
-            min-height: 7.5rem;
-            resize: vertical;
+        .scroll-gallery::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
         }
 
-        /* Form Messages */
-        #form-messages {
-            margin-bottom: 1.25rem;
-            padding: 0.9375rem;
-            border-radius: 0.625rem;
-            display: none;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            text-align: center;
-            position: relative;
-            z-index: 5;
+        .scroll-gallery::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 10px;
         }
 
-        #form-messages.success {
-            display: block;
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-
-        #form-messages.error {
-            display: block;
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-
-        /* Floating Letter Cards */
+        /* Floating Letters for Blessings Section */
         .floating-letters-container {
             position: absolute;
             top: 0;
@@ -803,1397 +1072,1066 @@
 
         .floating-letter {
             position: absolute;
-            background: linear-gradient(135deg, var(--warm-white) 0%, var(--ivory) 100%);
-            padding: 15px 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-            border: 1px solid var(--light-gold);
+            background: linear-gradient(135deg, rgba(232, 180, 79, 0.15), rgba(255, 215, 0, 0.12));
+            backdrop-filter: blur(5px);
+            padding: 14px 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(232, 180, 79, 0.2);
+            border: 1px solid rgba(232, 180, 79, 0.4);
             font-family: 'Cormorant Garamond', serif;
-            font-size: 0.95rem;
-            color: var(--gold);
-            max-width: 200px;
-            line-height: 1.6;
+            font-size: 1rem;
+            color: rgba(250, 243, 224, 0.9);
+            max-width: 230px;
+            line-height: 1.7;
             opacity: 0;
-            border-left: 3px solid var(--rose);
-            pointer-events: none;
-            animation-play-state: paused;
+            border-left: 3px solid var(--accent);
+            font-style: italic;
         }
 
-        .floating-letters-container.active .floating-letter {
-            animation-play-state: running;
-        }
-
-
-
-        /* From Left to Right */
-        @keyframes floatFromLeft {
-            0% {
-                transform: translateX(-100%) rotate(-20deg);
-                opacity: 0;
-            }
-            5% {
-                opacity: 0.8;
-            }
-            95% {
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateX(calc(100vw + 100%)) rotate(20deg);
-                opacity: 0;
-            }
-        }
-
-        /* From Right to Left */
-        @keyframes floatFromRight {
-            0% {
-                transform: translateX(100vw) rotate(20deg);
-                opacity: 0;
-            }
-            5% {
-                opacity: 0.8;
-            }
-            95% {
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateX(calc(-100% - 100px)) rotate(-20deg);
-                opacity: 0;
-            }
-        }
-
-        /* Assign different animations to each letter - random horizontal movement */
+        /* Random movement patterns */
         .floating-letter:nth-child(1) {
-            top: 12%;
-            animation: floatFromLeft 50s ease-in-out infinite;
+            animation: floatDiagonal1 45s linear infinite;
             animation-delay: 0s;
-            transform: rotate(-3deg);
         }
 
         .floating-letter:nth-child(2) {
-            top: 35%;
-            animation: floatFromRight 44s ease-in-out infinite;
-            animation-delay: 2s;
-            transform: rotate(2deg);
+            animation: floatUpDown 38s linear infinite;
+            animation-delay: 3s;
         }
 
         .floating-letter:nth-child(3) {
-            top: 48%;
-            animation: floatFromLeft 56s ease-in-out infinite;
-            animation-delay: 5s;
-            transform: rotate(-1deg);
+            animation: floatDiagonal2 42s linear infinite;
+            animation-delay: 7s;
         }
 
         .floating-letter:nth-child(4) {
-            top: 58%;
-            animation: floatFromRight 48s ease-in-out infinite;
-            animation-delay: 8s;
-            transform: rotate(4deg);
+            animation: floatCircular 50s linear infinite;
+            animation-delay: 2s;
         }
 
         .floating-letter:nth-child(5) {
-            top: 72%;
-            animation: floatFromLeft 52s ease-in-out infinite;
-            animation-delay: 3s;
-            transform: rotate(-2deg);
+            animation: floatZigzag 40s linear infinite;
+            animation-delay: 10s;
         }
 
         .floating-letter:nth-child(6) {
-            top: 22%;
-            animation: floatFromRight 46s ease-in-out infinite;
-            animation-delay: 6s;
-            transform: rotate(3deg);
+            animation: floatDiagonal1 43s linear infinite;
+            animation-delay: 5s;
         }
 
         .floating-letter:nth-child(7) {
-            top: 53%;
-            animation: floatFromLeft 54s ease-in-out infinite;
-            animation-delay: 1s;
-            transform: rotate(-4deg);
+            animation: floatUpDown 47s linear infinite;
+            animation-delay: 8s;
         }
 
         .floating-letter:nth-child(8) {
-            top: 68%;
-            animation: floatFromRight 50s ease-in-out infinite;
-            animation-delay: 4s;
-            transform: rotate(1deg);
+            animation: floatZigzag 44s linear infinite;
+            animation-delay: 1s;
+        }
+
+        @keyframes floatDiagonal1 {
+            0% {
+                left: -250px;
+                top: -10%;
+                transform: rotate(-15deg);
+                opacity: 0;
+            }
+            5% {
+                opacity: 0.8;
+            }
+            95% {
+                opacity: 0.8;
+            }
+            100% {
+                left: 110%;
+                top: 110%;
+                transform: rotate(15deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes floatDiagonal2 {
+            0% {
+                right: -250px;
+                top: 110%;
+                transform: rotate(15deg);
+                opacity: 0;
+            }
+            5% {
+                opacity: 0.8;
+            }
+            95% {
+                opacity: 0.8;
+            }
+            100% {
+                right: 110%;
+                top: -10%;
+                transform: rotate(-15deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes floatUpDown {
+            0% {
+                left: -250px;
+                top: 50%;
+                transform: translateY(-50%) rotate(0deg);
+                opacity: 0;
+            }
+            5% {
+                opacity: 0.8;
+            }
+            25% {
+                top: 20%;
+            }
+            50% {
+                top: 70%;
+            }
+            75% {
+                top: 30%;
+            }
+            95% {
+                opacity: 0.8;
+            }
+            100% {
+                left: calc(100% + 250px);
+                top: 50%;
+                transform: translateY(-50%) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes floatCircular {
+            0% {
+                left: 50%;
+                top: -250px;
+                transform: translate(-50%, 0) rotate(0deg);
+                opacity: 0;
+            }
+            5% {
+                opacity: 0.8;
+            }
+            25% {
+                left: 80%;
+                top: 25%;
+            }
+            50% {
+                left: 50%;
+                top: 50%;
+            }
+            75% {
+                left: 20%;
+                top: 75%;
+            }
+            95% {
+                opacity: 0.8;
+            }
+            100% {
+                left: 50%;
+                top: calc(100% + 250px);
+                transform: translate(-50%, 0) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes floatZigzag {
+            0% {
+                right: -250px;
+                top: 20%;
+                transform: rotate(10deg);
+                opacity: 0;
+            }
+            5% {
+                opacity: 0.8;
+            }
+            20% {
+                right: 70%;
+                top: 40%;
+            }
+            40% {
+                right: 30%;
+                top: 60%;
+            }
+            60% {
+                right: 60%;
+                top: 30%;
+            }
+            80% {
+                right: 20%;
+                top: 70%;
+            }
+            95% {
+                opacity: 0.8;
+            }
+            100% {
+                right: 110%;
+                top: 50%;
+                transform: rotate(-10deg);
+                opacity: 0;
+            }
+        }
+
+        /* Form Section */
+        .form-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(180deg, #1A0F0F 0%, #0A0A0A 100%);
+        }
+
+        .form-glass {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(250, 243, 224, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(232, 180, 79, 0.3);
+            border-radius: 30px;
+            padding: 4rem 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-group-modern {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .form-group-modern label {
+            display: block;
+            margin-bottom: 0.8rem;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .form-group-modern input,
+        .form-group-modern textarea {
+            width: 100%;
+            padding: 1.2rem 1.5rem;
+            background: rgba(250, 243, 224, 0.05);
+            border: 2px solid rgba(232, 180, 79, 0.3);
+            border-radius: 15px;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group-modern input:focus,
+        .form-group-modern textarea:focus {
+            outline: none;
+            background: rgba(250, 243, 224, 0.08);
+            border-color: var(--accent);
+            box-shadow: 0 0 20px rgba(232, 180, 79, 0.2);
+        }
+
+        .form-group-modern input::placeholder,
+        .form-group-modern textarea::placeholder {
+            color: rgba(250, 243, 224, 0.4);
+        }
+
+        .form-group-modern textarea {
+            min-height: 150px;
+            resize: vertical;
         }
 
         /* Footer */
         footer {
-            background: var(--gold);
-            color: var(--cream);
+            background: linear-gradient(135deg, #1A0F0F 0%, #0A0A0A 100%);
+            padding: 4rem 2rem;
             text-align: center;
-            padding: 1.875rem 1.25rem;
+            border-top: 1px solid rgba(232, 180, 79, 0.3);
         }
 
         footer p {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4rem;
-            font-weight: 400;
+            font-size: 1.3rem;
+            color: rgba(250, 243, 224, 0.7);
+            margin: 0.5rem 0;
         }
 
-        /* Responsive Design */
+        /* Music Button */
+        .music-floating {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(201, 48, 44, 0.5);
+            animation: pulse-ring-music 2s infinite;
+        }
+
+        @keyframes pulse-ring-music {
+            0% {
+                box-shadow: 0 10px 30px rgba(201, 48, 44, 0.5), 0 0 0 0 rgba(232, 180, 79, 0.7);
+            }
+            70% {
+                box-shadow: 0 10px 30px rgba(201, 48, 44, 0.5), 0 0 0 20px rgba(232, 180, 79, 0);
+            }
+            100% {
+                box-shadow: 0 10px 30px rgba(201, 48, 44, 0.5), 0 0 0 0 rgba(232, 180, 79, 0);
+            }
+        }
+
+        .music-floating:hover {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .music-floating.muted {
+            background: rgba(255, 255, 255, 0.1);
+            animation: none;
+        }
+
+        .music-floating.muted::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 3px;
+            background: white;
+            transform: rotate(45deg);
+        }
+
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-
-
-
-
-            .invitation-content {
-                padding: 2.5rem 1.875rem;
+            body {
+                cursor: auto;
             }
 
-            .chandelier.left {
-                left: 5%;
+            .cursor, .cursor-follower {
+                display: none;
             }
 
-            .chandelier.right {
-                right: 5%;
+            .glass-card {
+                padding: 3rem 2rem;
             }
 
-            .chandelier img {
-                width: 140px;
-            }
-
-            .events-container {
+            .events-grid,
+            .cards-grid {
                 grid-template-columns: 1fr;
             }
 
 
-
-            .ganesh-icon {
-                width: 6.25rem;
-                height: 6.25rem;
+            .shehnai-decoration {
+                width: 100px;
             }
 
-            /* Wider form inputs on mobile */
-            .message-form {
-                padding: 1.25rem 0.3rem;
+            .shehnai-decoration.left {
+                left: -50px;
             }
 
-            .form-group input,
-            .form-group textarea {
-                width: 100%;
-                max-width: 100%;
-                box-sizing: border-box;
+            .shehnai-decoration.right {
+                right: -50px;
             }
+
+            .petal-fall {
+                font-size: 2rem;
+            }
+
+            .hero-content {
+                padding: 3rem 2rem;
+            }
+
         }
 
-        /* Scroll Animations */
-        .fade-in {
+        /* Reveal Animation */
+        .reveal-modern {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-            will-change: opacity, transform;
+            transform: translateY(80px) scale(0.9);
+            transition: all 1.2s cubic-bezier(0.23, 1, 0.320, 1);
         }
 
-        .fade-in.visible {
+        .reveal-modern.active {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateY(0) scale(1);
         }
 
-        .slide-in-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-            will-change: opacity, transform;
-        }
-
-        .slide-in-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .slide-in-right {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-            will-change: opacity, transform;
-        }
-
-        .slide-in-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .scale-in {
-            opacity: 0;
-            transform: scale(0.9);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-            will-change: opacity, transform;
-        }
-
-        .scale-in.visible {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        /* Faster animations on mobile */
-        @media (max-width: 768px) {
-            .fade-in,
-            .slide-in-left,
-            .slide-in-right,
-            .scale-in {
-                transition-duration: 0.5s;
-            }
-        }
-
-        .stagger-delay-1 {
-            transition-delay: 0.2s;
-        }
-
-        .stagger-delay-2 {
-            transition-delay: 0.4s;
-        }
-
-        .stagger-delay-3 {
-            transition-delay: 0.6s;
-        }
-
-        /* Fireworks Animation */
-        .fireworks-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            pointer-events: none;
-        }
-
-        .particle {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0;
-            animation: burst 1s ease-out forwards;
-        }
-
-        @keyframes burst {
-            0% {
-                transform: scale(0.5) translate(0, 0);
-                opacity: 1;
-            }
-            100% {
-                transform: scale(1) translate(var(--x), calc(var(--y) + 50px));
-                opacity: 0;
-            }
-        }
-
-        /* Arch Frame Shape for Cards - Authentic Mughal Style */
-        .arch-shaped {
-            position: relative;
-            border-left: 3px solid var(--gold);
-            border-right: 3px solid var(--gold);
-            border-bottom: 3px solid var(--gold);
-            border-top: none;
-            background: var(--warm-white);
-            overflow: visible;
-            padding-top: 40px;
-            padding-bottom: 30px;
-            margin-top: 80px;
-            margin-bottom: 80px;
-        }
-
-        /* Add extra spacing between consecutive arch sections in Helpful Information */
-        .link-card.arch-shaped + .link-card.arch-shaped {
-            margin-top: 160px;
-        }
-
-        /* Exact Mughal Multi-Cusped Arch from Reference */
-        .arch-shaped::before {
-            content: '';
-            position: absolute;
-            top: -60px;
-            left: -3px;
-            right: -3px;
-            height: 80px;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100' preserveAspectRatio='none'%3E%3C!-- Mughal arch with multiple scalloped cusps exactly like reference --%3E%3Cpath d='M 0,100 L 0,100 C 0,100 50,100 80,85 C 95,77 105,65 120,58 C 140,48 155,50 175,42 C 195,34 210,25 235,20 C 260,15 280,15 305,12 C 330,9 350,8 375,6 C 400,4 420,3 445,2 C 465,1 480,1 500,0 C 520,1 535,1 555,2 C 580,3 600,4 625,6 C 650,8 670,9 695,12 C 720,15 740,15 765,20 C 790,25 805,34 825,42 C 845,50 860,48 880,58 C 895,65 905,77 920,85 C 950,100 1000,100 1000,100 L 1000,100 L 1003,103 L -3,103 L -3,100 Z' fill='%23FDFBF7' stroke='%23D4AF37' stroke-width='3' stroke-linejoin='miter'/%3E%3C/svg%3E");
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-            background-position: center bottom;
-            z-index: 1;
-        }
-
-        /* Clip content to arch boundaries for wishes section only */
-        .arch-shaped .floating-letters-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            pointer-events: none;
-            z-index: 1;
-            clip-path: polygon(
-                0 80px,
-                0 100%,
-                100% 100%,
-                100% 80px,
-                100% 0,
-                0 0
-            );
-        }
-
-        /* Music Control Button */
-        .music-control {
+        /* Loading Screen */
+        .loading-screen {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            padding: 15px;
-            width: 60px;
-            height: 60px;
-            background: transparent;
-            border-radius: 50%;
-            border: 2px solid var(--rose);
-            cursor: pointer;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0A0A0A;
+            z-index: 10000;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
-            color: var(--rose);
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(200, 100, 130, 0.2);
-            transition: all 0.3s ease;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        /* Flower Shower Container for Varmala */
-        .flower-shower-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            pointer-events: none;
-            z-index: 1;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
-        .flower-shower-container.active {
-            opacity: 1;
-        }
-
-        .flower {
-            position: absolute;
-            font-size: 28px;
-            opacity: 0;
-        }
-
-        /* Flowers from top-left area falling to bottom-center */
-        .flower.from-left {
-            animation: fall-left ease-in infinite;
-        }
-
-        /* Flowers from top-right area falling to bottom-center */
-        .flower.from-right {
-            animation: fall-right ease-in infinite;
-        }
-
-        @keyframes fall-left {
-            0% {
-                top: 10%;
-                left: var(--start-left);
-                opacity: 0;
-                transform: rotate(0deg) scale(0.5);
-            }
-            10% {
-                opacity: 1;
-                transform: rotate(60deg) scale(1);
-            }
-            90% {
-                opacity: 0.8;
-            }
-            100% {
-                top: 100%;
-                left: var(--end-left);
-                opacity: 0;
-                transform: rotate(var(--rotation)) scale(0.7);
-            }
-        }
-
-        @keyframes fall-right {
-            0% {
-                top: 10%;
-                right: var(--start-right);
-                opacity: 0;
-                transform: rotate(0deg) scale(0.5);
-            }
-            10% {
-                opacity: 1;
-                transform: rotate(-60deg) scale(1);
-            }
-            90% {
-                opacity: 0.8;
-            }
-            100% {
-                top: 100%;
-                right: var(--end-right);
-                opacity: 0;
-                transform: rotate(var(--rotation)) scale(0.7);
-            }
-        }
-
-        /* Random starting positions and timings for flowers from left */
-        .flower.from-left:nth-child(1) { --start-left: 2%; --end-left: 15%; --rotation: 540deg; animation-duration: 3.5s; animation-delay: 0s; }
-        .flower.from-left:nth-child(3) { --start-left: 8%; --end-left: 65%; --rotation: 620deg; animation-duration: 4.2s; animation-delay: 0.6s; }
-        .flower.from-left:nth-child(5) { --start-left: 5%; --end-left: 40%; --rotation: 480deg; animation-duration: 3.8s; animation-delay: 1.3s; }
-        .flower.from-left:nth-child(7) { --start-left: 12%; --end-left: 85%; --rotation: 700deg; animation-duration: 4.5s; animation-delay: 2.1s; }
-        .flower.from-left:nth-child(9) { --start-left: 3%; --end-left: 30%; --rotation: 560deg; animation-duration: 3.6s; animation-delay: 0.9s; }
-        .flower.from-left:nth-child(11) { --start-left: 10%; --end-left: 55%; --rotation: 640deg; animation-duration: 4.0s; animation-delay: 1.7s; }
-        .flower.from-left:nth-child(13) { --start-left: 6%; --end-left: 75%; --rotation: 520deg; animation-duration: 3.9s; animation-delay: 2.4s; }
-        .flower.from-left:nth-child(15) { --start-left: 9%; --end-left: 20%; --rotation: 580deg; animation-duration: 4.3s; animation-delay: 1.2s; }
-
-        /* Random starting positions and timings for flowers from right */
-        .flower.from-right:nth-child(2) { --start-right: 3%; --end-right: 10%; --rotation: -540deg; animation-duration: 3.7s; animation-delay: 0.3s; }
-        .flower.from-right:nth-child(4) { --start-right: 9%; --end-right: 70%; --rotation: -600deg; animation-duration: 4.1s; animation-delay: 1.0s; }
-        .flower.from-right:nth-child(6) { --start-right: 6%; --end-right: 45%; --rotation: -520deg; animation-duration: 3.9s; animation-delay: 1.8s; }
-        .flower.from-right:nth-child(8) { --start-right: 11%; --end-right: 88%; --rotation: -680deg; animation-duration: 4.4s; animation-delay: 2.5s; }
-        .flower.from-right:nth-child(10) { --start-right: 4%; --end-right: 25%; --rotation: -560deg; animation-duration: 3.8s; animation-delay: 0.7s; }
-        .flower.from-right:nth-child(12) { --start-right: 10%; --end-right: 60%; --rotation: -620deg; animation-duration: 4.2s; animation-delay: 1.5s; }
-        .flower.from-right:nth-child(14) { --start-right: 7%; --end-right: 35%; --rotation: -500deg; animation-duration: 3.6s; animation-delay: 2.2s; }
-        .flower.from-right:nth-child(16) { --start-right: 5%; --end-right: 80%; --rotation: -580deg; animation-duration: 4.0s; animation-delay: 1.1s; }
-
-        .music-control:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(200, 100, 130, 0.4);
-            background: rgba(200, 100, 130, 0.1);
-        }
-
-        .music-control.playing {
-            animation: none;
-        }
-
-        /* Strike-through line for muted state - 60 degree angle */
-        .music-control::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 70%;
-            height: 2px;
-            background: var(--rose);
-            transform: translate(-50%, -50%) rotate(60deg) scaleX(0);
-            transform-origin: center;
-            transition: transform 0.3s ease;
-        }
-
-        .music-control.muted::after {
-            transform: translate(-50%, -50%) rotate(60deg) scaleX(1);
-            animation: strikeThrough 0.3s ease forwards;
-        }
-
-        @keyframes strikeThrough {
-            from {
-                transform: translate(-50%, -50%) rotate(60deg) scaleX(0);
-            }
-            to {
-                transform: translate(-50%, -50%) rotate(60deg) scaleX(1);
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                box-shadow: 0 4px 15px rgba(200, 100, 130, 0.2);
-                border-color: var(--rose);
-            }
-            50% {
-                box-shadow: 0 4px 25px rgba(200, 100, 130, 0.5);
-                border-color: var(--gold);
-            }
-        }
-
-        /* Polaroid Photos on Rope */
-        .polaroid-container {
-            position: absolute;
-            top: 1.875rem;
-            left: 0;
-            width: 100%;
-            height: 12.5rem;
-            pointer-events: none;
-            z-index: 1;
-            opacity: 0.6;
-        }
-
-        .rope {
-            position: absolute;
-            top: 20px;
-            left: 5%;
-            width: 90%;
-            height: 2px;
-            background: linear-gradient(to right, 
-                transparent 0%, 
-                #C97B8E 5%, 
-                #C97B8E 95%, 
-                transparent 100%);
-            pointer-events: none;
-            box-shadow: 0 1px 2px rgba(200, 100, 130, 0.3);
-        }
-
-        .polaroid {
-            position: absolute;
-            top: 20px;
-            display: flex;
             flex-direction: column;
-            align-items: center;
-            animation-timing-function: ease-in-out;
-            animation-iteration-count: infinite;
-            animation-direction: alternate;
-            left: 0;
-            transform: translateX(-50%);
+            transition: opacity 0.5s ease, visibility 0.5s ease;
         }
 
-        /* Clip holding the photo */
-        .polaroid::before {
-            content: '';
-            width: 20px;
-            height: 16px;
-            background: linear-gradient(to bottom, #D2691E 0%, #8B4513 100%);
-            clip-path: polygon(
-                25% 0%, 75% 0%,
-                100% 20%, 100% 50%,
-                80% 55%, 80% 100%,
-                20% 100%, 20% 55%,
-                0% 50%, 0% 20%
-            );
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-            margin-bottom: 2px;
-            z-index: 10;
-        }
-
-        /* String hanging from rope to clip */
-        .polaroid::after {
-            content: '';
-            width: 1.5px;
-            height: 20px;
-            background: linear-gradient(to bottom, #C97B8E, rgba(201, 123, 142, 0.7));
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
-        }
-
-        .polaroid img {
-            display: block;
-            border: 1.5px solid var(--gold);
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-            transform-origin: top center;
-        }
-
-        /* Sway animations - now rotates the image inside */
-        @keyframes sway1 {
-            0% { transform: rotate(-4deg); }
-            100% { transform: rotate(2deg); }
-        }
-
-        @keyframes sway2 {
-            0% { transform: rotate(3deg); }
-            100% { transform: rotate(-3deg); }
-        }
-
-        @keyframes sway3 {
-            0% { transform: rotate(-2deg); }
-            100% { transform: rotate(4deg); }
-        }
-
-        @keyframes sway4 {
-            0% { transform: rotate(5deg); }
-            100% { transform: rotate(-1deg); }
-        }
-
-        .polaroid:nth-child(2) {
-            left: 15%;
-        }
-
-        .polaroid:nth-child(2) img {
-            width: 130px;
-            animation: sway1 3.5s ease-in-out infinite alternate;
-        }
-
-        .polaroid:nth-child(3) {
-            left: 38%;
-        }
-
-        .polaroid:nth-child(3) img {
-            width: 130px;
-            animation: sway2 4s ease-in-out infinite alternate;
-        }
-
-        .polaroid:nth-child(4) {
-            left: 62%;
-        }
-
-        .polaroid:nth-child(4) img {
-            width: 130px;
-            animation: sway3 3.8s ease-in-out infinite alternate;
-        }
-
-        .polaroid:nth-child(5) {
-            left: 85%;
-        }
-
-        .polaroid:nth-child(5) img {
-            width: 130px;
-            animation: sway4 4.2s ease-in-out infinite alternate;
-        }
-
-        @media (max-width: 768px) {
-            .polaroid:nth-child(2) img,
-            .polaroid:nth-child(3) img,
-            .polaroid:nth-child(4) img,
-            .polaroid:nth-child(5) img {
-                width: 5.625rem;
-            }
-
-            .polaroid::before {
-                height: 15px;
-            }
-
-            .polaroid-container {
-                height: 11.25rem;
-                top: 1.875rem;
-            }
-
-            .rope {
-                top: 15px;
-            }
-        }
-        /* Route Animation for Venue Location */
-        .route-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
+        .loading-screen.hidden {
             opacity: 0;
-            transition: opacity 0.5s ease;
+            visibility: hidden;
         }
-        
-        .route-container.active {
-            opacity: 1;
-        }
-        
-        /* Airport icon - top left */
-        .airport-icon {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 131px;
-            height: 131px;
-            z-index: 1;
-        }
-        
-        .airport-icon img {
-            width: 100%;
-            height: 100%;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
-        }
-        
-        /* Mandap icon - bottom LEFT */
-        .mandap-icon {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            width: 145px;
-            height: 145px;
-            z-index: 1;
-        }
-        
-        .mandap-icon img {
-            width: 100%;
-            height: 100%;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
-        }
-        
-        /* Dotted path - C-shaped route from airport to mandap */
-        .route-path {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-        }
-        
-        .route-path svg {
-            width: 100%;
-            height: 100%;
-        }
-        
-        /* Animated taxi - bigger size */
-        .taxi-animated {
-            position: absolute;
-            width: 149px; /* Increased size */
-            height: 149px; /* Increased size */
-            z-index: 2;
-            opacity: 0;
-            offset-rotate: auto; /* Taxi rotates along the path */
-        }
-        
-        .taxi-animated img {
-            width: 100%;
-            height: 100%;
-            filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.25));
-        }
-        
-        .route-container.active .taxi-animated {
-            animation: taxiRoute 10s linear forwards; /* Run once and hold final state */
-        }
-        
-        @keyframes taxiRoute {
-            0% {
-                offset-distance: 0%;
-                opacity: 0;
-            }
-            2% {
-                opacity: 1;
-            }
-            98% {
-                opacity: 1;
-            }
-            100% {
-                offset-distance: 100%;
-                opacity: 1; /* Stay visible at the end */
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .airport-icon {
-                top: 0.9375rem;
-                left: 0.9375rem;
-                width: 5.75rem;
-                height: 5.75rem;
-            }
-            
-            .mandap-icon {
-                bottom: 0.9375rem;
-                left: 0.9375rem;
-                width: 6.5625rem;
-                height: 6.5625rem;
-            }
-            
-            .taxi-animated {
-                width: 6.5625rem;
-                height: 6.5625rem;
-            }
 
-            #venue-card {
-                min-height: 34.375rem;
-            }
+        .loader {
+            width: 80px;
+            height: 80px;
+            border: 4px solid rgba(232, 180, 79, 0.2);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
 
-            .btn {
-                padding: 0.75rem 1.5625rem;
-                border-radius: 1.875rem;
-            }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            margin-top: 2rem;
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: var(--accent);
+            letter-spacing: 0.2em;
         }
     </style>
 </head>
 <body>
-    <!-- Background Music -->
-    <audio id="background-music" loop preload="auto">
-        <source src="song.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loader">
+        <div class="loader"></div>
+        <p class="loading-text">Loading...</p>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <!-- Particle Canvas -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Music Control -->
+    <button class="music-floating" id="musicControl">♫</button>
+    <audio id="bgMusic" loop>
+        <source src="assets/audio/song.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- Music Control Button -->
-    <button id="music-toggle" class="music-control playing" title="Pause Music">
-        ♫
-    </button>
-
-    <!-- Ganesh Section -->
-    <section class="ganesh-section">
-
-        <div class="top-svg-container"></div>
+    <!-- Hero Section - Traditional Indian Welcome -->
+    <section class="hero">
+        <!-- Top Decorative Border -->
+        <div class="mandala-top" id="topBorder"></div>
         
+
+        <!-- Flower Shower -->
+        <div class="flower-shower">
+            <div class="petal-fall">🌸</div>
+            <div class="petal-fall">🌺</div>
+            <div class="petal-fall">🌼</div>
+            <div class="petal-fall">🏵️</div>
+            <div class="petal-fall">🌸</div>
+            <div class="petal-fall">🌺</div>
+            <div class="petal-fall">🌼</div>
+            <div class="petal-fall">🏵️</div>
+            <div class="petal-fall">🌸</div>
+            <div class="petal-fall">🌺</div>
+            <div class="petal-fall">🌼</div>
+            <div class="petal-fall">🏵️</div>
+        </div>
+
+        <!-- Main Content Card -->
+        <div class="hero-content">
+            <!-- Shehnai Decorations -->
+            <img src="assets/icons/shehnai.svg" class="shehnai-decoration left" alt="Shehnai">
+            <img src="assets/icons/shehnai.svg" class="shehnai-decoration right" alt="Shehnai">
+
+            <!-- Ganesh Blessing -->
+            <div class="ganesh-blessing">
+                <p class="om-mantra">॥ श्री गणेशाय नमः ॥</p>
+                <div class="ganesh-image">
+                    <img src="assets/images/ganpati.png" alt="Lord Ganesh">
+                </div>
+            </div>
+
+            <div class="ornamental-divider"></div>
+
+            <!-- Warm Welcome Message -->
+            <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: #8B4513; margin-bottom: 2.5rem; line-height: 2; font-style: italic; font-weight: 500;">
+                With hearts overflowing with joy and gratitude,<br>
+                we warmly invite you to share in our happiness
+            </p>
+
+            <!-- Couple Names -->
+            <h1 class="hero-title">
+                Pranay
+                <span class="hero-ampersand">&</span>
+                Suhani
+            </h1>
+
+            <!-- Hindi Poetry -->
+            <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: #A0522D; margin: 2.5rem 0; line-height: 2.2; font-weight: 600;">
+                दो दिलों का मिलन, दो परिवारों का संगम<br>
+                <span style="font-size: 1.2rem; font-style: italic; color: #8B6F47; font-weight: 400;">
+                    खुशियों से सजे इस पल में, आपका साथ है सबसे अनमोल
+                </span>
+            </p>
+
+            <div class="ornamental-divider"></div>
+
+            <!-- Countdown Timer -->
+            <div style="margin: 2.5rem 0; padding: 2rem; background: linear-gradient(135deg, rgba(218, 165, 32, 0.12), rgba(210, 105, 30, 0.12)); border-radius: 20px; border: 2px solid rgba(218, 165, 32, 0.4);">
+                <p style="font-family: 'Cinzel', serif; font-size: 1.2rem; color: #D2691E; margin-bottom: 1.5rem; font-weight: 700; letter-spacing: 0.12em;">
+                    COUNTDOWN TO OUR BIG DAY
+                </p>
+                <div id="countdown" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; max-width: 550px; margin: 0 auto;">
+                    <div style="text-align: center;">
+                        <div id="days" style="font-family: 'Cinzel', serif; font-size: 2.5rem; color: #D2691E; font-weight: 800;"></div>
+                        <div style="font-size: 0.8rem; color: #8B6F47; margin-top: 0.4rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;">DAYS</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div id="hours" style="font-family: 'Cinzel', serif; font-size: 2.5rem; color: #D2691E; font-weight: 800;"></div>
+                        <div style="font-size: 0.8rem; color: #8B6F47; margin-top: 0.4rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;">HOURS</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div id="minutes" style="font-family: 'Cinzel', serif; font-size: 2.5rem; color: #D2691E; font-weight: 800;"></div>
+                        <div style="font-size: 0.8rem; color: #8B6F47; margin-top: 0.4rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;">MINUTES</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div id="seconds" style="font-family: 'Cinzel', serif; font-size: 2.5rem; color: #D2691E; font-weight: 800;"></div>
+                        <div style="font-size: 0.8rem; color: #8B6F47; margin-top: 0.4rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;">SECONDS</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wedding Date -->
+            <p class="hero-date" style="font-size: 1.6rem; color: #D2691E;">
+                10-11 December 2025
+            </p>
+
+            <!-- Venue -->
+            <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: #A0522D; margin-top: 1.5rem; font-weight: 600;">
+                JK Farm, Kotdwar
+            </p>
+
+            <!-- Closing Message -->
+            <p style="font-family: 'Montserrat', sans-serif; font-size: 1.1rem; color: #704214; margin-top: 2.5rem; line-height: 2; font-weight: 400;">
+                Your presence would be the greatest blessing<br>
+                as we embark on this beautiful journey of togetherness
+            </p>
+        </div>
+
+        <!-- Bottom Mandala Border -->
+        <div class="mandala-bottom"></div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
     </section>
 
-    <!-- Welcome Section -->
-    <section class="welcome-section">
-        <div class="shehnai-container">
-            <img src="shehnai.svg" class="shehnai left" alt="Shehnai">
-            <img src="shehnai.svg" class="shehnai right" alt="Shehnai">
-        </div>
-        <div class="ganesh-mantra fade-in">|| श्री गणेशाय नमः ||</div>
-        <div class="ganesh-icon scale-in">
-            <img src="ganpati.png" alt="Shree Ganesh" loading="eager">
-        </div>
-        <div class="couple-names fade-in">
-            Amit
-            <span class="ampersand">& </span>
-            Priyanka
-        </div>
-        <div class="divider scale-in"></div>
-        <div class="welcome-message fade-in">
-            With great joy, we invite you to celebrate the union of two hearts, two families, and a lifetime of love
-        </div>
-        <div class="divider scale-in"></div>
-    </section>
-
-    <!-- Formal Invitation Section -->
+    <!-- Invitation Section -->
     <section class="invitation-section">
-        <div class="invitation-content fade-in arch-shaped">
-            <!-- Chandelier decorations -->
-            <div class="chandelier-container">
-                <div class="chandelier left">
-                    <img src="chand.png" alt="Chandelier">
-                </div>
-                <div class="chandelier right">
-                    <img src="chand.png" alt="Chandelier">
-                </div>
-            </div>
+        <div class="glass-card reveal-modern">
+            <h2 class="section-title">You Are Cordially Invited</h2>
             
-            <h2 class="invitation-title">You Are Cordially Invited</h2>
-            <div class="divider"></div>
-            <p class="invitation-text">
-                To the wedding ceremony of<br>
-                <span style="font-size: 2rem; font-family: 'Amoresa', cursive;">Amit</span><br>
-                Son of<br>
-                Mrs. Jyoti Sehgal<br>
-                Mr. Rajeev Sehgal<br>     
-                <strong>&</strong><br>                
-                <span style="font-size: 2rem; font-family: 'Amoresa', cursive;">Priyanka</span><br>
-                Daughter of<br>
-                Mrs. Sangeeta Kathare<br>
-                Late Shri Ashok Kathare<br>
-                as they begin their journey together
-            </p>
-            <div class="wedding-date">
-                29th - 30th November, 2025
+            <div class="couple-info">
+                <p class="family-text" style="font-size: 1.1rem; margin-bottom: 2rem;">To the wedding ceremony of</p>
+                
+                <div class="name-large">Pranay</div>
+                <p class="family-text">
+                    Son of Mrs Nisha Agarwal & late Mr Awadesh Agarwal
+                </p>
+
+                <div class="divider-line"></div>
+
+                <div class="name-large">Suhani</div>
+                <p class="family-text">
+                    Daughter of Mrs Preeti Rastogi & Mr. Sudhanshu Rastogi
+                </p>
             </div>
-            <p class="venue-name">
-                <strong>Gold Finch Hotel</strong><br>
-                Andheri East, Mumbai
-            </p>
+
+            <div class="divider-line"></div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <h3 style="font-family: 'Cinzel', serif; font-size: 2rem; color: var(--gold); margin-bottom: 0.5rem;">JK Farm</h3>
+                <p class="family-text">Najibabad Road, Kotdwar</p>
+            </div>
         </div>
     </section>
 
     <!-- Events Section -->
     <section class="events-section">
-        <h2 class="section-title fade-in">Celebration Events</h2>
-        <div class="events-container">
-            <!-- Sangeet Card -->
-            <div class="event-card slide-in-left arch-shaped" id="sangeet-card">
-                <div class="fireworks-container"></div>
-                <h3 class="event-name">Sangeet</h3>
-                <div class="divider"></div>
-                <div class="event-details">
-                    <strong>Date</strong>
-                    29th November, 2025
+        <h2 class="section-title reveal-modern">Wedding Events</h2>
+        
+        <div class="events-grid">
+            <div class="event-card-3d reveal-modern">
+                <div class="event-icon-animated">
+                    <img src="assets/icons/haldi.png" alt="Haldi">
                 </div>
-                <div class="event-details">
-                    <strong>Time</strong>
-                    7:00 PM Onwards
-                </div>
-                <div class="event-details">
-                    <strong>Venue</strong>
-                    Rooftop, Gold Finch Hotel
-                </div>
-                <div class="dress-code">
-                    <strong>Dress Code:</strong> Bling ✨
-                </div>
+                <h3 class="event-name">Haldi Ceremony</h3>
+                <p class="event-info-text"><strong>Date:</strong> 10th December, 2025</p>
+                <p class="event-info-text"><strong>Time:</strong> 10:00 AM Onwards</p>
+                <p class="event-info-text"><strong>Venue:</strong> Tourist Garden, NBD Road, Kotdwar</p>
+                <p style="margin-top: 1.5rem; font-style: italic; color: var(--gold);">Dress Code: Traditional Yellow ✨</p>
+                <a href="https://maps.app.goo.gl/BPmicgxWnC4RVuVF6" target="_blank" class="btn-modern">Direction</a>
             </div>
 
-            <!-- Varmala & Phera Card -->
-            <div class="event-card slide-in-right arch-shaped">
-                <!-- Flower Shower Animation -->
-                <div class="flower-shower-container">
-                    <div class="flower from-left">🌸</div>
-                    <div class="flower from-right">🌺</div>
-                    <div class="flower from-left">🌼</div>
-                    <div class="flower from-right">🌸</div>
-                    <div class="flower from-left">🌺</div>
-                    <div class="flower from-right">🌼</div>
-                    <div class="flower from-left">🌸</div>
-                    <div class="flower from-right">🌺</div>
-                    <div class="flower from-left">🌼</div>
-                    <div class="flower from-right">🌸</div>
-                    <div class="flower from-left">🌺</div>
-                    <div class="flower from-right">🌼</div>
-                    <div class="flower from-left">🌸</div>
-                    <div class="flower from-right">🌺</div>
-                    <div class="flower from-left">🌼</div>
-                    <div class="flower from-right">🌸</div>
+            <div class="event-card-3d reveal-modern">
+                <div class="event-icon-animated">
+                    <img src="assets/icons/mehandi.png" alt="Mehandi">
+                </div>
+                <h3 class="event-name">Mehandi Ceremony</h3>
+                <p class="event-info-text"><strong>Date:</strong> 10th December, 2025</p>
+                <p class="event-info-text"><strong>Time:</strong> 7:00 PM Onwards</p>
+                <p class="event-info-text"><strong>Venue:</strong> Tourist Garden, NBD Road, Kotdwar</p>
+                <p style="margin-top: 1.5rem; font-style: italic; color: var(--gold);">Dress Code: Traditional Green ✨</p>
+                <a href="https://maps.app.goo.gl/BPmicgxWnC4RVuVF6" target="_blank" class="btn-modern">Direction</a>
+            </div>
+
+            <div class="event-card-3d reveal-modern">
+                <div class="event-icon-animated">
+                    <img src="assets/icons/weddingCeremony.png" alt="Wedding Ceremony">
+                </div>
+                <h3 class="event-name">Wedding Ceremony</h3>
+                <p class="event-info-text"><strong>Date:</strong> 11th December, 2025</p>
+                <p class="event-info-text"><strong>Time:</strong> 9:00 PM Onwards</p>
+                <p class="event-info-text"><strong>Venue:</strong> J.K Farm, Najibabad Road, Kotdwar</p>
+                <a href="https://maps.app.goo.gl/9hJz8FfQzdzCxSQe7" target="_blank" class="btn-modern">Direction</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Information Cards -->
+    <section class="cards-section">
+        <h2 class="section-title reveal-modern">Information</h2>
+        
+        <div class="cards-grid">
+            <div class="interactive-card reveal-modern">
+                <div style="font-size: 3.5rem; margin-bottom: 1.5rem; filter: drop-shadow(0 4px 15px rgba(255, 215, 0, 0.6));">💌</div>
+                <h3 style="color: var(--accent);">Blessings</h3>
+                <p>Share your blessings and good wishes for the couple</p>
+                <a href="#wishesSection" class="btn-modern">Leave Message</a>
+            </div>
+
+            <div class="interactive-card reveal-modern">
+                <div style="font-size: 3.5rem; margin-bottom: 1.5rem; filter: drop-shadow(0 4px 15px rgba(255, 215, 0, 0.6));">📸</div>
+                <h3 style="color: var(--accent);">Memories</h3>
+                <p>Share the love, upload your favorite moments from the celebration</p>
+                <a href="https://photos.app.goo.gl/zF2Ji3QQC6C8qZdR8" target="_blank" class="btn-modern">Share Photos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section - Our Story -->
+    <section class="gallery-section">
+        <h2 class="section-title reveal-modern" style="letter-spacing: 0.15em;">OUR STORY</h2>
+        
+        <div class="story-container">
+            <div class="polaroid-grid">
+                <div class="polaroid-card reveal-modern">
+                    <div class="polaroid-image">
+                        <img src="assets/images/couple1.jpeg" alt="Pranay & Suhani - First Meeting">
+                    </div>
+                    <div class="polaroid-caption">Where it all began...</div>
                 </div>
                 
-                <h3 class="event-name">Baraat, Phere & Reception</h3>
-                <div class="divider"></div>
-                <div class="event-details">
-                    <strong>Date</strong>
-                    30th November, 2025
+                <div class="polaroid-card reveal-modern">
+                    <div class="polaroid-image">
+                        <img src="assets/images/couple2.jpeg" alt="Pranay & Suhani - Growing Together">
+                    </div>
+                    <div class="polaroid-caption">Growing together in love</div>
                 </div>
-                <div class="event-details">
-                    <strong>Time</strong>
-                    9:00 AM Onwards
+                
+                <div class="polaroid-card reveal-modern">
+                    <div class="polaroid-image">
+                        <img src="assets/images/couple3.jpeg" alt="Pranay & Suhani - Moments">
+                    </div>
+                    <div class="polaroid-caption">Creating memories</div>
                 </div>
-                <div class="event-details">
-                    <strong>Venue</strong>
-                    Silverbills Banquet, Gold Finch Hotel
+                
+                <div class="polaroid-card reveal-modern">
+                    <div class="polaroid-image">
+                        <img src="assets/images/couple4.jpeg" alt="Pranay & Suhani - Forever">
+                    </div>
+                    <div class="polaroid-caption">Forever starts now...</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Useful Links Section -->
-    <section class="links-section">
-        <div class="links-container">
-            <h2 class="section-title fade-in">Helpful Information</h2>
+    <!-- Form Section -->
+    <section class="form-section" id="wishesSection">
+        <div class="form-glass reveal-modern">
+            <!-- Floating Letters Background -->
+            <div class="floating-letters-container">
+                <div class="floating-letter">Congratulations to the beautiful couple! 💑</div>
+                <div class="floating-letter">Wishing you a lifetime of love and happiness! ❤️</div>
+                <div class="floating-letter">May your love story be as magical as a fairy tale ✨</div>
+                <div class="floating-letter">Cheers to love, laughter, and your happily ever after! 🥂</div>
+                <div class="floating-letter">May your marriage be filled with endless joy! 💕</div>
+            </div>
+
+            <h2 class="section-title" style="position: relative; z-index: 2;">Your Blessings</h2>
             
-            <!-- Google Maps Link -->
-            <div class="link-card fade-in arch-shaped" id="venue-card">
-                <!-- Route Animation Container -->
-                <div class="route-container">
-                    <!-- Airport icon - top left -->
-                    <div class="airport-icon">
-                        <img src="airport.svg" alt="Airport">
-                    </div>
-                    
-                    <!-- Mandap icon - bottom left -->
-                    <div class="mandap-icon">
-                        <img src="mandap.svg" alt="Mandap">
-                    </div>
-                    
-                    <!-- Dotted C-shaped path -->
-                    <div class="route-path">
-                        <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-                        </svg>
-                    </div>
-                    
-                    <!-- Animated taxi with natural movement -->
-                    <div class="taxi-animated">
-                        <img src="taxi.svg" alt="Taxi">
-                    </div>
+            <form id="wishForm" action="https://formspree.io/f/xzzygwlk" method="POST" style="position: relative; z-index: 2;">
+                <div class="form-group-modern">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Your name">
                 </div>
-                
-                <div class="venue-text-content">
-                    <h3>📍 Venue Location</h3>
-                    <p>Get directions to Gold Finch Hotel, Andheri East</p>
-                    <a href="https://maps.app.goo.gl/KdNgw9WxxtoHyenq5" target="_blank" class="btn">Open in Google Maps</a>
+                <div class="form-group-modern">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required placeholder="Share your blessings..."></textarea>
                 </div>
-            </div>
-
-            <!-- Message Form -->
-            <div class="link-card fade-in arch-shaped">
-                <!-- Floating Letters Background -->
-                <div class="floating-letters-container">
-                    <div class="floating-letter">Congratulations to the beautiful couple! 💑</div>
-                    <div class="floating-letter">Wishing you a lifetime of love and happiness! ❤️</div>
-                    <div class="floating-letter">May your love story be as magical as a fairy tale ✨</div>
-                    <div class="floating-letter">Wishing for happily ever after, Amit and Priyanka! 🌟</div>
-                    <div class="floating-letter">Cheers to love, laughter, and your happily ever after! 🥂</div>
-                    <div class="floating-letter">Best wishes on this wonderful journey! 🎊</div>
-                    <div class="floating-letter">May your marriage be filled with endless joy! 💕</div>
-                    <div class="floating-letter">So happy for you both! Congratulations! 🎉</div>
-                </div>
-                
-                <h3>💌 Leave Your Wishes</h3>
-                <p>Share your blessings and good wishes for the couple</p>
-                <div id="form-messages"></div>
-                <form class="message-form" id="wishes-form" action="https://formspree.io/f/xldognkw" method="POST">
-                    <div class="form-group">
-                        <label for="name">Your Name *</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Your Message *</label>
-                        <textarea id="message" name="message" required placeholder="Share your heartfelt wishes..."></textarea>
-                    </div>
-                    <button type="submit" class="btn">Send Wishes</button>
-                </form>
-            </div>
-
-            <!-- Photo Upload Link -->
-            <div class="link-card fade-in arch-shaped">
-                <!-- Polaroid Photos on Rope -->
-                <div class="polaroid-container">
-                    <div class="rope"></div>
-                    <div class="polaroid">
-                        <img src="couple1.png" alt="Amit & Priyanka">
-                    </div>
-                    <div class="polaroid">
-                        <img src="couple2.png" alt="Amit & Priyanka">
-                    </div>
-                    <div class="polaroid">
-                        <img src="couple3.png" alt="Amit & Priyanka">
-                    </div>
-                    <div class="polaroid">
-                        <img src="couple4.png" alt="Amit & Priyanka">
-                    </div>
-                </div>
-                
-                <h3>📸 Share Photos</h3>
-                <p>Capture moments and share them with us! Upload your photos from the celebration</p>
-                <a href="https://photos.app.goo.gl/iGJowXZonFgK34eH6" target="_blank" class="btn">Upload Photos</a>
-            </div>
+                <button type="submit" class="btn-modern" style="width: 100%;">Send Blessings</button>
+            </form>
+            <div id="formStatus" style="margin-top: 1.5rem; text-align: center; display: none;"></div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>Looking forward to celebrating with you!</p>
-        <p style="margin-top: 10px; font-size: 0.9rem;">Amit & Priyanka • November 2025</p>
+        <p style="font-size: 2rem; color: var(--gold); margin-bottom: 1rem;">॥ शुभ विवाह ॥</p>
+        <p>Celebrating love, tradition, and new beginnings</p>
+        <p style="margin-top: 2rem; opacity: 0.6;">Pranay & Suhani | December 2025</p>
     </footer>
 
     <script>
-        // Intersection Observer for scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all animated elements
-        document.addEventListener('DOMContentLoaded', () => {
-            // Smart loading for top.png - show instantly if cached, fade if loading
-            const topSvgContainer = document.querySelector('.top-svg-container');
-            if (topSvgContainer) {
-                const img = new Image();
-                img.src = 'top.png';
+        // Loading Screen
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
                 
-                if (img.complete) {
-                    // Image is already cached, show instantly
-                    topSvgContainer.classList.add('instant');
-                } else {
-                    // Image needs to load, show with fade effect
+                // Load top.png border
+                const topBorder = document.getElementById('topBorder');
+                if (topBorder) {
+                    const img = new Image();
+                    img.src = 'assets/images/top.png';
                     img.onload = () => {
-                        topSvgContainer.classList.add('loaded');
+                        topBorder.classList.add('loaded');
                     };
                     img.onerror = () => {
-                        // Even on error, show the container (background-image might still work)
-                        topSvgContainer.classList.add('loaded');
+                        topBorder.classList.add('loaded');
                     };
                 }
+            }, 1500);
+        });
+
+        // Custom Cursor
+        const cursor = document.getElementById('cursor');
+        const follower = document.getElementById('cursorFollower');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            
+            setTimeout(() => {
+                follower.style.left = e.clientX + 'px';
+                follower.style.top = e.clientY + 'px';
+            }, 100);
+        });
+
+        // Particle System
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1;
+                this.speedX = Math.random() * 0.5 - 0.25;
+                this.speedY = Math.random() * 0.5 - 0.25;
+                this.color = `rgba(${Math.random() > 0.5 ? '255, 215, 0' : '232, 180, 79'}, ${Math.random() * 0.5 + 0.2})`;
             }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+            }
+
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        const particles = [];
+        for (let i = 0; i < 100; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
             
-            const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
-            animatedElements.forEach(el => observer.observe(el));
-            
-            // Observer for flower shower and route animation
-            const effectsObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const flowers = entry.target.querySelector('.flower-shower-container');
-                        const floatingLetters = entry.target.querySelector('.floating-letters-container');
-                        const routeContainer = entry.target.querySelector('.route-container');
-                        
-                        if (flowers) {
-                            flowers.classList.add('active');
-                        }
-                        if (floatingLetters) {
-                            floatingLetters.classList.add('active');
-                        }
-                        if (routeContainer) {
-                            routeContainer.classList.add('active');
-                            const taxi = routeContainer.querySelector('.taxi-animated');
-                            const containerWidth = routeContainer.offsetWidth;
-                            const containerHeight = routeContainer.offsetHeight;
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
 
-                            // Define path based on container dimensions
-                            const startX = containerWidth * 0.25;
-                            const startY = containerHeight * 0.25;
-                            const endX = containerWidth * 0.2;
-                            const endY = containerHeight * 0.75;
-                            const controlX1 = containerWidth * 0.8;
-                            const controlY1 = containerHeight * 0.2;
-                            const controlX2 = containerWidth * 0.8;
-                            const controlY2 = containerHeight * 0.8;
+            // Connect nearby particles
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
 
-                            const path = `M ${startX},${startY} C ${controlX1},${controlY1} ${controlX2},${controlY2} ${endX},${endY}`;
-                            
-                            if (taxi) {
-                                taxi.style.offsetPath = `path('${path}')`;
-                            }
-                        }
-
-                        const sangeetCard = entry.target.closest('#sangeet-card');
-                        if (sangeetCard) {
-                            const fireworksContainer = sangeetCard.querySelector('.fireworks-container');
-                            if (entry.isIntersecting) {
-                                createFireworks(fireworksContainer);
-                            } else {
-                                if (fireworksContainer && fireworksContainer.fireworksInterval) {
-                                    clearInterval(fireworksContainer.fireworksInterval);
-                                    fireworksContainer.dataset.fireworksActive = false;
-                                }
-                            }
-                        }
+                    if (distance < 120) {
+                        ctx.strokeStyle = `rgba(232, 180, 79, ${0.2 * (1 - distance / 120)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
                     }
-                });
-            }, observerOptions);
-            
-            // Observe event cards for special effects
-            const eventCards = document.querySelectorAll('.event-card');
-            eventCards.forEach(card => effectsObserver.observe(card));
-            
-            // Observe link cards for floating letters
-            const linkCards = document.querySelectorAll('.link-card');
-            linkCards.forEach(card => effectsObserver.observe(card));
-
-            const shehnaiLeft = document.querySelector('.shehnai.left');
-            const shehnaiRight = document.querySelector('.shehnai.right');
-
-            // Function to update the shehnai animation based on scroll position
-            function updateShehnaiAnimation() {
-                const scrollY = window.scrollY;
-                const animationStart = 0;
-                const animationEnd = 500; // Animate over the first 500px of scroll
-
-                // Calculate progress from 0 to 1
-                let progress = (scrollY - animationStart) / (animationEnd - animationStart);
-                progress = Math.max(0, Math.min(1, progress)); // Clamp between 0 and 1
-
-                // Calculate transform values
-                const translateXLeft = -50 + (progress * 50); // From -50% to 0%
-                const rotateLeft = -45 + (progress * 45); // From -45deg to 0deg
-
-                const translateXRight = 50 - (progress * 50); // From 50% to 0%
-                const rotateRight = 45 - (progress * 45); // From 45deg to 0deg
-
-                shehnaiLeft.style.transform = `translateX(${translateXLeft}%) translateY(-50%) rotate(${rotateLeft}deg)`;
-                shehnaiRight.style.transform = `translateX(${translateXRight}%) translateY(-50%) rotate(${rotateRight}deg) scaleX(-1)`;
+                }
             }
 
-            // Listen for scroll events and update animation using requestAnimationFrame for smoothness
-            window.addEventListener('scroll', () => {
-                requestAnimationFrame(updateShehnaiAnimation);
-            });
+            requestAnimationFrame(animateParticles);
+        }
 
-            // Call it once on load to set the initial position correctly
-            updateShehnaiAnimation();
+        animateParticles();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // Scroll Reveal
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal-modern');
             
-            // Music Control
-            
-            // Music Control
-            const bgMusic = document.getElementById('background-music');
-            const musicToggle = document.getElementById('music-toggle');
-            let musicPlaying = false;
-            let musicStarted = false;
-            
-            // Function to play music
-            function playMusic() {
-                bgMusic.play().then(() => {
-                    musicPlaying = true;
-                    musicStarted = true;
-                    musicToggle.classList.add('playing');
-                    musicToggle.classList.remove('muted');
-                    musicToggle.title = 'Pause Music';
-                }).catch(error => {
-                    musicPlaying = false;
-                    musicToggle.classList.remove('playing');
-                    musicToggle.classList.add('muted');
-                    musicToggle.title = 'Play Music';
-                });
-            }
-            
-            // Function to pause music
-            function pauseMusic() {
-                bgMusic.pause();
-                musicPlaying = false;
-                musicToggle.classList.remove('playing');
-                musicToggle.classList.add('muted');
-                musicToggle.title = 'Play Music';
-            }
-            
-            // Toggle music on button click
-            musicToggle.addEventListener('click', (e) => {
-                e.stopPropagation(); // Prevent double-triggering
-                if (musicPlaying) {
-                    pauseMusic();
-                } else {
-                    playMusic();
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 100;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
                 }
             });
-            
-            // Start music on ANY click (first interaction)
-            document.addEventListener('click', function startOnClick() {
-                if (!musicStarted) {
-                    playMusic();
-                }
-            }, { once: true });
-            
-            // Also try on any key press
-            document.addEventListener('keydown', function startOnKey() {
-                if (!musicStarted) {
-                    playMusic();
-                }
-            }, { once: true });
-            
-            // Also try on touchstart for mobile
-            document.addEventListener('touchstart', function startOnTouch() {
-                if (!musicStarted) {
-                    playMusic();
-                }
-            }, { once: true, passive: true });
-            
-            // Set initial state
-            musicToggle.classList.remove('playing');
-            musicToggle.classList.add('muted');
-            musicToggle.title = 'Play Music';
-            
-            // Handle Ganpati image loading animation
-            const ganpatiImg = document.querySelector('.ganesh-icon img');
-            if (ganpatiImg) {
-                if (ganpatiImg.complete) {
-                    // Image already loaded
-                    ganpatiImg.classList.add('loaded');
-                } else {
-                    // Wait for image to load
-                    ganpatiImg.addEventListener('load', function() {
-                        ganpatiImg.classList.add('loaded');
-                    });
-                    // Fallback: add class after 2 seconds even if load event doesn't fire
-                    setTimeout(() => {
-                        if (!ganpatiImg.classList.contains('loaded')) {
-                            ganpatiImg.classList.add('loaded');
-                        }
-                    }, 2000);
-                }
+        }
+
+        window.addEventListener('scroll', reveal);
+        reveal();
+
+        // Music Control
+        const musicBtn = document.getElementById('musicControl');
+        const music = document.getElementById('bgMusic');
+        let playing = false;
+
+        musicBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (playing) {
+                music.pause();
+                musicBtn.classList.add('muted');
+            } else {
+                music.play().catch(() => {});
+                musicBtn.classList.remove('muted');
             }
+            playing = !playing;
+        });
+
+        document.addEventListener('click', () => {
+            if (!playing) {
+                music.play().catch(() => {});
+                musicBtn.classList.remove('muted');
+                playing = true;
+            }
+        }, { once: true });
+
+        // Form Submission
+        const wishForm = document.getElementById('wishForm');
+        const formStatus = document.getElementById('formStatus');
+
+        wishForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
             
-            // Create subtle glitter sparkles
-            createGlitter();
+            formStatus.style.display = 'block';
+            formStatus.style.color = 'var(--accent)';
+            formStatus.textContent = 'Sending...';
+
+            const formData = new FormData(wishForm);
             
-            // Handle form submission
-            const form = document.getElementById('wishes-form');
-            const formMessages = document.getElementById('form-messages');
-            
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Show loading message immediately
-                formMessages.innerHTML = '✨ Sending your beautiful wishes...';
-                formMessages.className = 'success';
-                formMessages.style.display = 'block';
-                
-                const formData = new FormData(form);
-                
-                fetch(form.action, {
+            try {
+                const response = await fetch(wishForm.action, {
                     method: 'POST',
                     body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                })
-                .then(response => {
-                    if (response.ok) {
-                        formMessages.innerHTML = '✨ Thank you for your beautiful wishes! Your message means the world to us. 💕';
-                        formMessages.className = 'success';
-                        form.reset();
-                    } else {
-                        return response.json().then(data => {
-                            throw new Error(data.error || 'Form submission failed');
-                        });
-                    }
-                })
-                .catch(error => {
-                    formMessages.innerHTML = 'Oops! There was a problem sending your message. Please try again.';
-                    formMessages.className = 'error';
+                    headers: { 'Accept': 'application/json' }
                 });
+
+                if (response.ok) {
+                    formStatus.style.color = '#4CAF50';
+                    formStatus.textContent = '✓ Thank you for your blessings!';
+                    wishForm.reset();
+                } else {
+                    formStatus.style.color = '#C9302C';
+                    formStatus.textContent = 'Please try again';
+                }
+            } catch (error) {
+                formStatus.style.color = '#C9302C';
+                formStatus.textContent = 'Please try again';
+            }
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
             });
         });
 
-        // Create subtle glitter sparkles in the background
-        function createGlitter() {
-            // Reduce glitter count on mobile for better performance
-            const isMobile = window.innerWidth <= 768;
-            const numberOfGlitters = isMobile ? 30 : 60; // Reduced from 100
+        // 3D Card Tilt Effect
+        document.querySelectorAll('.glass-card, .event-card-3d, .polaroid-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 15;
+                const rotateY = (centerX - x) / 15;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05) translateZ(20px)`;
+                card.style.transition = 'none';
+            });
             
-            for (let i = 0; i < numberOfGlitters; i++) {
-                const glitter = document.createElement('div');
-                glitter.className = 'glitter';
-                
-                // Random position across entire page
-                glitter.style.left = Math.random() * 100 + '%';
-                glitter.style.top = Math.random() * 100 + '%';
-                
-                // Varying sizes for sparkle effect (2-6px)
-                const size = 2 + Math.random() * 4;
-                glitter.style.width = size + 'px';
-                glitter.style.height = size + 'px';
-                
-                // Random animation delay for natural sparkle effect
-                glitter.style.animationDelay = Math.random() * 4 + 's';
-                
-                // Random animation duration for variation (2-5s)
-                const duration = 2 + Math.random() * 3;
-                
-                // Use CSS custom properties instead of creating style tags
-                glitter.style.setProperty('--sparkle-duration', duration + 's');
-                glitter.style.setProperty('--sparkle-delay', Math.random() * 4 + 's');
-                
-                document.body.appendChild(glitter);
+            card.addEventListener('mouseleave', () => {
+                card.style.transition = 'all 0.6s cubic-bezier(0.23, 1, 0.320, 1)';
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1) translateZ(0)';
+            });
+        });
+
+        // Countdown Timer
+        function updateCountdown() {
+            const weddingDate = new Date('December 10, 2025 09:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = '<p style="font-size: 2rem; color: var(--gold);">The Wedding Day is Here! 🎉</p>';
             }
         }
 
-        function createFireworks(container) {
-            if (!container || container.dataset.fireworksActive) return;
-            container.dataset.fireworksActive = true;
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
 
-            const colors = ['var(--gold)', 'var(--rose)', 'var(--soft-pink)'];
-            
-            const launchFirework = () => {
-                const rocket = document.createElement('div');
-                rocket.style.position = 'absolute';
-                rocket.style.left = `${Math.random() * 80 + 10}%`;
-                rocket.style.bottom = '0';
-                rocket.style.width = '2px';
-                rocket.style.height = '10px';
-                rocket.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                container.appendChild(rocket);
+        // Confetti Effect
+        function createConfetti() {
+            const colors = ['#FFD700', '#FFA500', '#FF6347', '#DAA520', '#D2691E'];
+            const confettiCount = 100;
 
-                const height = Math.random() * container.offsetHeight * 0.6 + container.offsetHeight * 0.2;
-                const duration = Math.random() * 500 + 800;
-                rocket.animate([
-                    { transform: `translateY(0)` },
-                    { transform: `translateY(-${height}px)` }
-                ], {
-                    duration: duration,
-                    easing: 'ease-in-out'
-                }).onfinish = () => {
-                    createBurst(rocket.offsetLeft, container.offsetHeight - height, container, colors);
-                    rocket.remove();
-                };
-            };
-
-            const createBurst = (x, y, container, colors) => {
-                const particleCount = Math.random() * 50 + 50;
-                for (let i = 0; i < particleCount; i++) {
-                    const particle = document.createElement('div');
-                    particle.className = 'particle';
-                    particle.style.position = 'absolute';
-                    particle.style.left = `${x}px`;
-                    particle.style.top = `${y}px`;
-                    particle.style.width = `${Math.random() * 3 + 1}px`;
-                    particle.style.height = particle.style.width;
-                    particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                    
-                    const angle = Math.random() * 360;
-                    const distance = Math.random() * 80 + 20;
-                    const translateX = Math.cos(angle) * distance;
-                    const translateY = Math.sin(angle) * distance;
-
-                    particle.style.setProperty('--x', `${translateX}px`);
-                    particle.style.setProperty('--y', `${translateY}px`);
-
-                    container.appendChild(particle);
-
-                    setTimeout(() => {
-                        particle.remove();
-                    }, 1000);
-                }
-            };
-
-            container.fireworksInterval = setInterval(launchFirework, 400);
+            for (let i = 0; i < confettiCount; i++) {
+                const confetti = document.createElement('div');
+                const size = Math.random() * 10 + 5;
+                const left = Math.random() * 100;
+                const opacity = Math.random() * 0.8 + 0.2;
+                const duration = Math.random() * 3 + 2;
+                const delay = Math.random() * 0.5;
+                const rotation = Math.random() * 360;
+                const borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                
+                confetti.style.position = 'fixed';
+                confetti.style.width = size + 'px';
+                confetti.style.height = size + 'px';
+                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.top = '-20px';
+                confetti.style.left = left + '%';
+                confetti.style.opacity = opacity;
+                confetti.style.zIndex = '9999';
+                confetti.style.pointerEvents = 'none';
+                confetti.style.borderRadius = borderRadius;
+                confetti.style.animation = 'confetti-fall-' + i + ' ' + duration + 's linear forwards';
+                confetti.style.animationDelay = delay + 's';
+                
+                // Create unique keyframe for each confetti
+                const keyframe = '@keyframes confetti-fall-' + i + ' { to { transform: translateY(100vh) rotate(' + rotation + 'deg); opacity: 0; } }';
+                const styleEl = document.createElement('style');
+                styleEl.textContent = keyframe;
+                document.head.appendChild(styleEl);
+                
+                document.body.appendChild(confetti);
+                setTimeout(() => {
+                    confetti.remove();
+                    styleEl.remove();
+                }, duration * 1000 + delay * 1000 + 100);
+            }
         }
+
+        // Trigger confetti on hero card click
+        document.querySelector('.hero-content').addEventListener('click', () => {
+            createConfetti();
+        });
+
+        // Trigger confetti when scrolling to events section
+        let confettiTriggered = false;
+        window.addEventListener('scroll', () => {
+            if (!confettiTriggered) {
+                const eventsSection = document.querySelector('.events-section');
+                if (eventsSection) {
+                    const rect = eventsSection.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        createConfetti();
+                        confettiTriggered = true;
+                    }
+                }
+            }
+        });
+
+        // Polaroid Click to Expand
+        document.querySelectorAll('.polaroid-card').forEach((card) => {
+            card.addEventListener('click', () => {
+                const modal = document.createElement('div');
+                modal.style.position = 'fixed';
+                modal.style.top = '0';
+                modal.style.left = '0';
+                modal.style.width = '100%';
+                modal.style.height = '100%';
+                modal.style.background = 'rgba(0, 0, 0, 0.95)';
+                modal.style.zIndex = '10000';
+                modal.style.display = 'flex';
+                modal.style.alignItems = 'center';
+                modal.style.justifyContent = 'center';
+                modal.style.padding = '2rem';
+                modal.style.cursor = 'pointer';
+
+                const img = card.querySelector('img').cloneNode();
+                img.style.maxWidth = '90%';
+                img.style.maxHeight = '90vh';
+                img.style.borderRadius = '10px';
+                img.style.boxShadow = '0 30px 100px rgba(232, 180, 79, 0.5)';
+
+                modal.appendChild(img);
+                document.body.appendChild(modal);
+
+                modal.addEventListener('click', () => {
+                    modal.remove();
+                });
+            });
+        });
     </script>
 </body>
 </html>
