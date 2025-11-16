@@ -72,7 +72,7 @@ apwedding/
 
 ## 🚀 Deployment
 
-The website is deployed at: `https://pranayagarwal02.github.io/apwedding/`
+The website is deployed at: `https://pranayagarwal02.github.io/pswedding/`
 
 ### To deploy updates:
 1. Commit changes to the repository
